@@ -28,11 +28,11 @@ clear: both;
 }
 
 #c1 {
-    background-color:#aaa;
+    background-color:rgb(77, 213, 255);
 }
 
 #c2 {
-    background-color:#bbb;
+    background-color:rgb(175, 113, 255);
 }
 
 /* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
