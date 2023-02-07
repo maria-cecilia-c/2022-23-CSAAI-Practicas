@@ -62,6 +62,10 @@ img {
     float: none;  /*como se ajusta al texto*/
     width: 60%;
   }
+.obj {
+    padding: 0 6px;
+    width: 60%;
+}
 
 /* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
 /* Así conseguimos que el contenido se vea bien en dispositvos móviles */
