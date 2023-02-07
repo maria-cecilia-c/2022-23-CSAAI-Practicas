@@ -35,14 +35,14 @@ clear: both;
     border-radius: 20px;
 }
 #c1 {
-    background-color:rgba(255, 126, 126, 0.644);
+    background-color:rgba(199, 255, 126, 0.534);
     border-width:8px;
     border: rgb(255, 0, 0) 8px outset;
     border-radius: 20px;
 }
 
 #c2 {
-    background-color:rgba(255, 121, 121, 0.541);
+    background-color:rgba(186, 255, 121, 0.479);
     border-width:2px;
     border: rgb(255, 0, 0) 8px outset;
     border-radius: 20px;
