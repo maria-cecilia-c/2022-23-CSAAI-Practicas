@@ -28,12 +28,19 @@ clear: both;
 }
 
 #c1 {
-    background-color:rgb(77, 213, 255);
+    background-color:rgba(77, 213, 255, 0.644);
+    border-width:2px;
+    border-style: solid;
+    border-color:black;
 }
 
 #c2 {
-    background-color:rgb(175, 113, 255);
+    background-color:rgba(175, 113, 255, 0.541);
+    border-width:2px;
+    border-style: solid;
+    border-color:black;
 }
+
 
 /* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
 /* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
