@@ -27,18 +27,25 @@ display: table;
 clear: both;
 }
 
+#nombre{
+    text-align:center;
+    background-color:rgba(255, 126, 126, 0.644);
+    border-width:8px;
+    border: rgb(255, 0, 0) 8px outset;
+    border-radius: 20px;
+}
 #c1 {
-    background-color:rgba(77, 213, 255, 0.644);
-    border-width:2px;
-    border-style: solid;
-    border-color:black;
+    background-color:rgba(255, 126, 126, 0.644);
+    border-width:8px;
+    border: rgb(255, 0, 0) 8px outset;
+    border-radius: 20px;
 }
 
 #c2 {
-    background-color:rgba(175, 113, 255, 0.541);
+    background-color:rgba(255, 121, 121, 0.541);
     border-width:2px;
-    border-style: solid;
-    border-color:black;
+    border: rgb(255, 0, 0) 8px outset;
+    border-radius: 20px;
 }
 
 
@@ -52,8 +59,8 @@ img {
 
 .iresponsive {
     padding: 0 6px;
-    float: left;
-    width: 50%;
+    float: none;  /*como se ajusta al texto*/
+    width: 60%;
   }
 
 /* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
