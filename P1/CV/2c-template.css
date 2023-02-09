@@ -12,6 +12,11 @@ padding: 10px;
 min-height: 500px;
 }
 
+@font-face {
+    font-family: "FUENTE";
+    src: url(SUPER\ PUNCH.ttf);
+}
+
 .izquierda {
 width: 25%;
 }
@@ -27,10 +32,12 @@ display: table;
 clear: both;
 }
 
-#nombre{
+h1{
+    font-family: "FUENTE";
+    font-size: 70px;
     text-align:center;
     background-color:rgba(255, 255, 255, 0.808);
-    border-width:8px;
+    border-width:6px;
     border: rgb(0, 0, 0) 6px outset;
     border-radius: 10px;
 }
@@ -41,7 +48,7 @@ body {
     background-repeat:no-repeat;
   }
 #c1 {
-    background-color:rgba(255, 173, 107, 0.651);
+    background-color:rgba(255, 255, 255, 0.705);
     border-width:8px;
     border: rgb(0, 0, 0) 6px outset;
     border-radius: 10px;
