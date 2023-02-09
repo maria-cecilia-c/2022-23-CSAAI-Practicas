@@ -34,6 +34,13 @@ clear: both;
     border: rgb(255, 0, 0) 8px outset;
     border-radius: 20px;
 }
+body {
+    height: 400px;
+    background-image: url("fondodenji.jpg");
+  background-size: cover;
+    background-repeat:no-repeat;
+    
+  }
 #c1 {
     background-color:rgba(199, 255, 126, 0.534);
     border-width:8px;
