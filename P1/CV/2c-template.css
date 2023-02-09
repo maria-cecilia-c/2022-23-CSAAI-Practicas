@@ -29,32 +29,35 @@ clear: both;
 
 #nombre{
     text-align:center;
-    background-color:rgba(255, 126, 126, 0.644);
+    background-color:rgba(255, 255, 255, 0.808);
     border-width:8px;
-    border: rgb(255, 0, 0) 8px outset;
-    border-radius: 20px;
+    border: rgb(0, 0, 0) 6px outset;
+    border-radius: 10px;
 }
 body {
     height: 400px;
     background-image: url("fondodenji.jpg");
-  background-size: cover;
+    background-size: cover;
     background-repeat:no-repeat;
-    
   }
 #c1 {
-    background-color:rgba(199, 255, 126, 0.534);
+    background-color:rgba(255, 173, 107, 0.651);
     border-width:8px;
-    border: rgb(255, 0, 0) 8px outset;
-    border-radius: 20px;
+    border: rgb(0, 0, 0) 6px outset;
+    border-radius: 10px;
 }
 
 #c2 {
-    background-color:rgba(186, 255, 121, 0.479);
+    background-color:rgba(255, 255, 255, 0.808);
     border-width:2px;
-    border: rgb(255, 0, 0) 8px outset;
-    border-radius: 20px;
+    border: rgb(0, 0, 0) 6px outset;
+    border-radius: 10px;
 }
 
+#yo {
+    border: rgb(0, 0, 0) 2px outset;
+    border-radius: 10px;
+}
 
 /* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
 /* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
