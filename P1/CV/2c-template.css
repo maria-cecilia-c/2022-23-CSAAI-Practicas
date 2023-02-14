@@ -79,16 +79,15 @@ img {
 
 .ñeñeñe{
     border: rgb(0, 0, 0) 2px outset;
-    width: 13%;
+    width: 10%;
     height: auto;
-    position: relative;
-    right: -1040px;
-    top: -129px;
+    position: absolute;
+    right: 20px;
+    top: 290px;
     margin-top: 1px;
     margin-right: 1px;
     margin-bottom: -140px;
     margin-left: 1px
-    
 }
 
 .iresponsive {
