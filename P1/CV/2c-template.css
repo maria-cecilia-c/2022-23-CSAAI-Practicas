@@ -32,9 +32,9 @@ display: table;
 clear: both;
 }
 
-h1{
+.nombre{
     font-family: "FUENTE";
-    font-size: 70px;
+    font-size: 40px;
     text-align:center;
     background-color:rgba(255, 255, 255, 0.808);
     border-width:6px;
@@ -64,6 +64,7 @@ body {
 h2 {
     border: rgb(0, 0, 0) 2px outset;
     border-radius: 10px;
+    background-color:rgb(255, 143, 79);
 }
 
 /* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
