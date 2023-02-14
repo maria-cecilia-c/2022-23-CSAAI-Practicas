@@ -65,6 +65,8 @@ h2 {
     border: rgb(0, 0, 0) 2px outset;
     border-radius: 6px;
     background-color:rgb(158, 158, 158);
+    position: relative;
+    
 }
 
 /* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
@@ -73,6 +75,20 @@ h2 {
 img {
     width: 100%;
     height: auto;
+}
+
+.ñeñeñe{
+    border: rgb(0, 0, 0) 2px outset;
+    width: 13%;
+    height: auto;
+    position: relative;
+    right: -1040px;
+    top: -129px;
+    margin-top: 1px;
+    margin-right: 1px;
+    margin-bottom: -140px;
+    margin-left: 1px
+    
 }
 
 .iresponsive {
