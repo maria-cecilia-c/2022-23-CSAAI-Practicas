@@ -82,7 +82,8 @@ img {
     width: 10%;
     height: auto;
     position: absolute;
-    
+    right: 20px;
+    top: 290px;
     margin-top: 1px;
     margin-right: 1px;
     margin-bottom: -140px;
