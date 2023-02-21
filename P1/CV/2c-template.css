@@ -83,10 +83,18 @@ img {
     margin-right: 1%;
 }
 
+#gifbutton{
+    width: 10%;
+    rotate: -14deg;
+    position: relative;
+    bottom: 3px;
+    left: 1px;
+}
 .sobre mi {
     margin-left: 2%;
     margin-right: 2%;
 }
+
 .Objetivos{
     margin-top: 12%;
 }
@@ -103,14 +111,14 @@ img {
 
 .button {
     display: inline-block;
-    padding: 15px 25px;
+    padding: 15px 20px;
     font-size: 24px;
     cursor: pointer;
     text-align: center;	
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: #ff5100;
+    background-color: #5661ff;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
