@@ -1,0 +1,189 @@
+/* https://www.w3schools.com/howto/howto_css_two_columns.asp */
+/* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
+/* Así definimos el comportamiento de caja para todos los elementos */
+* {
+    box-sizing: border-box;
+  }
+  
+/* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
+.columna {
+float: left;
+padding: 10px;
+min-height: 500px;
+}
+
+@font-face {
+    font-family: "FUENTE";
+    src: url(SUPER\ PUNCH.ttf);
+}
+
+.izquierda {
+width: 33%;
+}
+.centro{
+width: 33%;
+}
+.derecha {
+width: 34%;
+}
+
+/* Clear floats despues de las columnas para eliminar la superposición */
+.filla:after {
+content: "";
+display: table;
+clear: both;
+}
+
+.nombre{
+    padding: -150px -20px;
+    font-family: "FUENTE";
+    font-size: 40px;
+    text-align:center;
+    background-color:rgba(255, 255, 255, 0.808);
+    border-width:6px;
+    border: rgb(0, 0, 0) 6px outset;
+    border-radius: 10px;
+}
+body {
+    height: 400px;
+    background-image: url("fondodenji.jpg");
+    background-size: cover;
+    background-repeat:no-repeat;
+  }
+#c1 {
+    background-color:rgba(255, 255, 255, 0.705);
+    border-width:8px;
+    border: rgb(0, 0, 0) 6px outset;
+    border-radius: 10px;
+}
+
+#c2 {
+    background-color:rgba(255, 255, 255, 0.808);
+    border-width:2px;
+    border: rgb(0, 0, 0) 6px outset;
+    border-radius: 10px;
+}
+#c3 {
+    background-color:rgba(255, 255, 255, 0.808);
+    border-width:2px;
+    border: rgb(0, 0, 0) 6px outset;
+    border-radius: 10px;
+}
+
+h2 {
+    border: rgb(0, 0, 0) 2px outset;
+    border-radius: 6px;
+    background-color:rgb(158, 158, 158);
+    position: relative;
+    
+}
+
+/* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
+/* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+#ñeñeñe{
+    width: 15%;
+    margin-bottom: 1%;
+    margin-right: 1%;
+}
+
+#gifbutton{
+    width: 10%;
+    rotate: -16deg;
+    position: relative;
+    bottom: 12px;
+    left: 140px;
+}
+.sobre mi {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.Objetivos{
+    margin-top: 12%;
+}
+
+.iresponsive {
+    padding: 0 6px;
+    float: none;  /*como se ajusta al texto*/
+    width: 60%;
+  }
+.obj {
+    padding: 0 6px;
+    width: 60%;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;	
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #5661ff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .button:hover {background-color: #006cc4}
+  
+  .button:active {
+    background-color: #34d6ff;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+.button2 {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;	
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #474747;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 9px #999;
+  }
+  .button2:hover {background-color: #646464}
+  
+  .button2:active {
+    background-color: #7a7a7a;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+
+/* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
+/* Así conseguimos que el contenido se vea bien en dispositvos móviles */
+
+@media screen and (max-width: 600px) {
+    .columna {
+      width: 100%;
+    }
+
+    .iresponsive {
+        width: 100%;
+    }
+    #ñeñeñe{
+        width: 100%;
+    }
+    #gifbutton{
+        width: 30%;
+    }
+    .video{
+        width: 100%;
+    }
+}
+
+/* Más sobre diseño web responsive https://www.w3schools.com/css/css_rwd_intro.asp */
