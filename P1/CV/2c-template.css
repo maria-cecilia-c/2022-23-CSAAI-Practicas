@@ -85,9 +85,9 @@ img {
 
 #gifbutton{
     width: 10%;
-    rotate: -14deg;
+    rotate: -15deg;
     position: relative;
-    bottom: 3px;
+    bottom: 6px;
     left: 140px;
 }
 .sobre mi {
@@ -144,6 +144,9 @@ img {
     }
     #ñeñeñe{
         width: 100%;
+    }
+    #gifbutton{
+        width: 30%;
     }
     .video{
         width: 100%;
