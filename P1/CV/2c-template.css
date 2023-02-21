@@ -155,8 +155,22 @@ img {
     transform: translateY(4px);
   }
 
+.Contactoicon {
+    list-style-image: url("twitter.png");
+    }
 
 
+.Contactoicon2 {
+    list-style-image: url("wikipedia.png");
+}
+
+.Contactoicon3 {
+    list-style-image: url("instagram.png");
+}
+
+.demons{
+    list-style-image: url("demonio.png");
+}
 /* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
 /* Así conseguimos que el contenido se vea bien en dispositvos móviles */
 
