@@ -134,7 +134,7 @@ img {
 
 .button2 {
     display: inline-block;
-    padding: 15px 20px;
+    padding: 4px 8px;
     font-size: 24px;
     cursor: pointer;
     text-align: center;	
@@ -143,7 +143,7 @@ img {
     color: #fff;
     background-color: #474747;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 0 9px #999;
   }
   .button2:hover {background-color: #646464}
