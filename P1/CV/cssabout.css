@@ -37,7 +37,7 @@ clear: both;
 .nombre{
     padding: -150px -20px;
     font-family: "FUENTE";
-    font-size: 40px;
+    font-size: 30px;
     text-align:center;
     background-color:rgba(255, 255, 255, 0.808);
     border-width:6px;
@@ -108,6 +108,11 @@ img {
     margin-top: 12%;
 }
 
+#volver{
+    width: 5%;
+    position: relative;
+    bottom: -15px;
+}
 .iresponsive {
     padding: 0 6px;
     float: none;  /*como se ajusta al texto*/
