@@ -120,7 +120,6 @@ img {
   }
 .videointro{
     float: none;  /*como se ajusta al texto*/
-    width: 100%;
     padding: 15px 15px;
 }
 .obj {
