@@ -113,6 +113,11 @@ img {
     float: none;  /*como se ajusta al texto*/
     width: 60%;
   }
+.videointro{
+    float: none;  /*como se ajusta al texto*/
+    width: 100%;
+    padding: 15px 15px;
+}
 .obj {
     padding: 0 6px;
     width: 60%;
@@ -173,6 +178,9 @@ img {
     }
 
     .iresponsive {
+        width: 100%;
+    }
+    .videointro{
         width: 100%;
     }
     #ñeñeñe{
