@@ -119,8 +119,20 @@ img {
     width: 60%;
   }
 .videointro{
-    float: none;  /*como se ajusta al texto*/
+    display: inline-flex;
     padding: 15px 15px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+}
+.video{
+    padding: 10px 20px;
+    float: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .obj {
     padding: 0 6px;
