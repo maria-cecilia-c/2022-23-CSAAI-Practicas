@@ -79,25 +79,22 @@ img {
 }
 
 #ñeñeñe{
-    width: 15%;
-    margin-bottom: 1%;
-    margin-right: 1%;
+    width: 14%;
+    padding: 10px 10px;
+    margin-bottom: 5px;
 }
 
 #gifbutton{
     width: 10%;
-    rotate: -16deg;
+    rotate: -15deg;
     position: relative;
-    bottom: 12px;
+    bottom: 7px;
     left: 140px;
 }
-.sobre mi {
-    margin-left: 2%;
-    margin-right: 2%;
-}
+
 
 .Objetivos{
-    margin-top: 12%;
+    margin-top: 14%;
 }
 
 .iresponsive {
