@@ -120,7 +120,6 @@ img {
   }
 .videointro{
     display: inline-flex;
-    padding: 15px 15px;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -128,7 +127,7 @@ img {
     align-items: center;
 }
 .video{
-    padding: 10px 20px;
+    padding: 10px 10px;
     float: center;
     width: 100%;
     margin-left: auto;
@@ -198,7 +197,8 @@ img {
     border: none;
     border-radius: 10px;
     box-shadow: 0 9px #999;
-    margin-bottom: 15px;
+    margin-bottom: 45px;
+    
 }
 .button3:hover {background-color: #ff491c}
   
