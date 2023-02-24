@@ -51,7 +51,7 @@ clear: both;
 }
 .volverCV{
     padding-right: 500px;
-    padding-bottom: -100px;
+    padding-bottom: 0px;
     font-family: "FUENTE";
     font-size: 30px;
     text-align:center;
