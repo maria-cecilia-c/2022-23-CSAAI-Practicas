@@ -35,8 +35,8 @@ clear: both;
 }
 
 .nombre{
-    padding-top: -60px;
-    padding-bottom: -29px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     font-family: "FUENTE";
     font-size: 25px;
     text-align:center;
