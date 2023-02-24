@@ -125,6 +125,7 @@ img {
     margin-right: auto;
     justify-content: center;
     align-items: center;
+    padding-bottom: 1px;
 }
 .video{
     padding: 1px 1px;
@@ -151,6 +152,7 @@ img {
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
+    
   }
   
   .button:hover {background-color: #006cc4}
@@ -208,6 +210,12 @@ img {
     transform: translateY(4px);
 }
 
+.texto2{
+    padding-top: 20px;
+}
+.texto3{
+    padding-top: 25px;
+}
 /* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
 /* Así conseguimos que el contenido se vea bien en dispositvos móviles */
 
