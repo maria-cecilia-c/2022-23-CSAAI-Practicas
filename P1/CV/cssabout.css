@@ -144,6 +144,8 @@ img {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    border: 4px rgb(82, 80, 80) solid;
+    
 }
 .obj {
     padding: 0 6px;
