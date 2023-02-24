@@ -86,7 +86,7 @@ img {
 
 #gifbutton{
     width: 10%;
-    rotate: 343deg;
+    transform: rotate(345deg);
     position: relative;
     bottom: 7px;
     left: 140px;
