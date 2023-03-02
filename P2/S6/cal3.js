@@ -28,29 +28,29 @@ clear = document.getElementById("clear")
 boton1.onclick = (ev) => { //llegara un evento
   display.innerHTML += ev.target.value;  //nos apoyamos en el evento
 }
-boton2.onclick = () => {
-  display.innerHTML += boton2.value;
+boton2.onclick = (ev) => {
+  display.innerHTML += ev.target.value;
 }
-boton3.onclick = () => {
-  display.innerHTML += boton3.value;
+boton3.onclick = (ev) => {
+  display.innerHTML += ev.target.value;
 }
-boton4.onclick = () => {
-  display.innerHTML += boton4.value;
+boton4.onclick = (ev) => {
+  display.innerHTML += ev.target.value;
 }
-boton5.onclick = () => {
-  display.innerHTML += boton5.value;
+boton5.onclick = (ev) => {
+  display.innerHTML += ev.target.value;
 }
-boton6.onclick = () => {
-  display.innerHTML += boton6.value;
+boton6.onclick = (ev) => {
+  display.innerHTML += ev.target.value;
 }
-boton7.onclick = () => {
-  display.innerHTML += boton7.value;
+boton7.onclick = (ev) => {
+  display.innerHTML += ev.target.value;
 }
-boton8.onclick = () => {
-  display.innerHTML += boton8.value;
+boton8.onclick = (ev) => {
+  display.innerHTML += ev.target.value;
 }
-boton9.onclick = () => {
-  display.innerHTML += boton9.value;
+boton9.onclick = (ev) => {
+  display.innerHTML += ev.target.value;
 }
 
 
