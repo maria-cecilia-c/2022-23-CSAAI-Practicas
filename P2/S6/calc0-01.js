@@ -9,6 +9,10 @@ boton3 = document.getElementById("boton3")
 boton4 = document.getElementById("boton4")
 boton5 = document.getElementById("boton5")
 boton6 = document.getElementById("boton6")
+boton7 = document.getElementById("boton7")
+boton8 = document.getElementById("boton8")
+boton9 = document.getElementById("boton9")
+
 
 
 suma = document.getElementById("suma")
@@ -22,27 +26,34 @@ clear = document.getElementById("clear")
 
 // -- Insertar digito 1
 boton1.onclick = () => {
-  display.innerHTML += "1";
+  display.innerHTML += boton1.value;  //quitamos los numeros magicos
 }
-
-//-- Insertar digito 2
 boton2.onclick = () => {
-  display.innerHTML += "2";
+  display.innerHTML += boton2.value;
 }
 boton3.onclick = () => {
-  display.innerHTML += "3";
+  display.innerHTML += boton3.value;
 }
 boton4.onclick = () => {
-  display.innerHTML += "4";
+  display.innerHTML += boton4.value;
 }
 boton5.onclick = () => {
-  display.innerHTML += "5";
+  display.innerHTML += boton5.value;
 }
 boton6.onclick = () => {
-  display.innerHTML += "6";
+  display.innerHTML += boton6.value;
+}
+boton7.onclick = () => {
+  display.innerHTML += boton7.value;
+}
+boton8.onclick = () => {
+  display.innerHTML += boton8.value;
+}
+boton9.onclick = () => {
+  display.innerHTML += boton9.value;
 }
 
-      
+
 //-- Insertar simbolo de sumar
 suma.onclick = () => {
   display.innerHTML += "+";
