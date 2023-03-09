@@ -39,15 +39,11 @@ const crono = new Crono(gui.display);
 //-- Función de retrollamada de los digitos
 function digito(ev){
     if (estado == ESTADO.INIT) {
-
         pantalla.innerHTML = ev.target.value;
         estado = ESTADO.OP1;
-
     } else {
-       
         //--En cualquier otro estado lo añadimos
         pantalla.innerHTML += ev.target.value;
-
     } 
     
 }
@@ -58,9 +54,9 @@ digitos = document.getElementsByClassName("digito")
 //-- para todos los botones de tipo dígito
 for (let boton of digitos) {
     boton.onclick = (ev) => {
-        pantalla.innerHTML += ev.target.value;
+       console.log(ev.target.value) //par que no salga por pantalla lo que escribimos
         crono.start();
-      }    
+    }    
 }
 
 
@@ -93,4 +89,3 @@ gui.reset.onclick = () => {
 }
 
 
-//no quiero ver lo que escribo, solo cuando acierte
