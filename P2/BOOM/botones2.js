@@ -1,3 +1,4 @@
+
 //-- Elementos de la gui
 const gui = {
     display : document.getElementById("display"),
@@ -26,6 +27,12 @@ gui.stop.onclick = () => {
 }
 
 //-- Reset del cronómetro
+gui.reset.onclick = () => {
+    console.log("Reset!");
+    crono.reset();
+}
+
+//-- numeros
 gui.reset.onclick = () => {
     console.log("Reset!");
     crono.reset();

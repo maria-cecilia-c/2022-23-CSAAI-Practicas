@@ -9,10 +9,10 @@ canvas.height = 200;
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
 
-//-- Cada objeto a dibujar lo delimitaremos 
+//-- Cada objeto a dibuja -r lo delimitaremos 
 //-- por los métodos beginPath() y closePath()
 ctx.beginPath();
-  //-- Definir un rectángulo de dimensiones 100x50,
+  //-- Definir un rectángulo de dimensones 100x50,
   //-- cuya esquina superior izquierda está en (5,5)
   ctx.rect(5,5, 100, 50);                                //(eje x, eje y, largo, ancho)
 
