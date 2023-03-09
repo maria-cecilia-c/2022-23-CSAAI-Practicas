@@ -1,5 +1,5 @@
 //ARRAY NUM SECRETO
- num_Secreto = [];
+num_Secreto = [];
 n = 0;
 //CLAVE SECRETA SERÁ UN NUMERO ALEATORIA DE 4 DIGITOS 
 //una vez creado los 4 numeros lo meteremos a un array. 
@@ -91,3 +91,6 @@ gui.reset.onclick = () => {
     console.log("Reset!");
     crono.reset();
 }
+
+
+//no quiero ver lo que escribo, solo cuando acierte
