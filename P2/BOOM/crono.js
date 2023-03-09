@@ -1,7 +1,7 @@
 //-- Clase cronómetro
 class Crono {
 
-    //-- Constructor. Hay que indicar el 
+    //-- Constructor. Hay que indicar el
     //-- display donde mostrar el cronómetro
     constructor(display) {
         this.display = display;
