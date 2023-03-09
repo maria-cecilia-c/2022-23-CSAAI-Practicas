@@ -4,15 +4,13 @@ n = 0;
 //CLAVE SECRETA SERÁ UN NUMERO ALEATORIA DE 4 DIGITOS 
 //una vez creado los 4 numeros lo meteremos a un array. 
 //for que genere 4 num 
-for (var i = 0; i < 4; i++) { //0-9
+for (var i = 0; i < 4; i++) { //0-9      VER PQ SALEN 3
     n += i;
     num1 = Math.floor(Math.random()*10);
     num_Secreto.push(num1);
     console.log(num1);
   }
   
-
-
 //-- Elementos de la interfaz de la calculadora
 //-- Estados de la calculadora
 const ESTADO = {
@@ -89,3 +87,4 @@ gui.reset.onclick = () => {
 }
 
 
+// * * *
