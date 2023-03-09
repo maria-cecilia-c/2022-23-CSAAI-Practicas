@@ -1,6 +1,8 @@
 //ARRAY NUM SECRETO
 num_Secreto = [];
 n = 0;
+
+
 //CLAVE SECRETA SERÁ UN NUMERO ALEATORIA DE 4 DIGITOS 
 //una vez creado los 4 numeros lo meteremos a un array. 
 //for que genere 4 num 
