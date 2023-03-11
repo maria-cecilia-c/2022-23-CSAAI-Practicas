@@ -1,18 +1,17 @@
 //ARRAY NUM SECRETO
-num_Secreto = [];
+var num_Secreto = [];
 n = 0;
-
+aciertos =[]; 
 
 //CLAVE SECRETA SERÁ UN NUMERO ALEATORIA DE 4 DIGITOS 
-//una vez creado los 4 numeros lo meteremos a un array. 
-//for que genere 4 num 
-for (var i = 0; i < 4; i++) { //0-9      VER PQ SALEN 3
+for (var i = 0; i < 4; i++) { //0-9    
     n += i;
     num1 = Math.floor(Math.random()*10);
     num_Secreto.push(num1);
     console.log(num1);
   }
-  
+console.log(num_Secreto)
+
 //-- Elementos de la interfaz de la calculadora
 //-- Estados de la calculadora
 const ESTADO = {
@@ -39,11 +38,11 @@ const crono = new Crono(gui.display);
 //-- Función de retrollamada de los digitos
 function digito(ev){
     if (estado == ESTADO.INIT) {
-        pantalla.innerHTML = ev.target.value;
+        pantalla0.innerHTML = ev.target.value;
         estado = ESTADO.OP1;
     } else {
         //--En cualquier otro estado lo añadimos
-        pantalla.innerHTML += ev.target.value;
+        pantalla0.innerHTML += ev.target.value;
     } 
     
 }
@@ -51,14 +50,40 @@ function digito(ev){
 digitos = document.getElementsByClassName("digito")
 
 //-- Establecer la misma función de retrollamada
-//-- para todos los botones de tipo dígito
 for (let boton of digitos) {
     boton.onclick = (ev) => {
        console.log(ev.target.value) //par que no salga por pantalla lo que escribimos
         crono.start();
+        //tiene que cambiar en orden
+           //si tengo dos iguales se ponen los dos
+            for(j = 0; j < num_Secreto.length; j++)  { 
+                if (num_Secreto[j] == ev.target.value){
+                    pantalla0.innerHTML = num_Secreto[j] 
+                    aciertos.push((Math.floor(pantalla0.innerHTML)));
+                }
+                if (num_Secreto[j+1] == ev.target.value){
+                    pantalla1.innerHTML = num_Secreto[j+1]
+                    aciertos.push((Math.floor(pantalla1.innerHTML)));
+                }
+                if (num_Secreto[j+2] == ev.target.value){
+                    pantalla2.innerHTML = num_Secreto[j+2] 
+                    aciertos.push((Math.floor(pantalla2.innerHTML)));
+                }
+                if (num_Secreto[j+3] == ev.target.value){
+                    pantalla3.innerHTML = num_Secreto[j+3] 
+                    aciertos.push((Math.floor(pantalla3.innerHTML)));
+                    
+                }
+                console.log("ÑEÑEÑEÑ", aciertos)
+                break
+                
+            }  
+            if (num_Secreto.length==aciertos.length){
+                crono.stop();
+            }
+  
     }    
 }
-
 
 console.log("Ejecuitando JS...");
 
@@ -89,4 +114,6 @@ gui.reset.onclick = () => {
 }
 
 
-// * * *
+
+
+
