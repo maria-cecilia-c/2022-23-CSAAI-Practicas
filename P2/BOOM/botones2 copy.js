@@ -64,23 +64,23 @@ for (let boton of digitos) {
 
                 if (num_Secreto[j] == ev.target.value){
                     pantalla0.innerHTML = num_Secreto[j] 
-                    aciertos.push((Math.floor(pantalla0.innerHTML)));
+                    aciertos.push(num_Secreto[j] );
                     num_Secreto[j] = 11;
                 }
-                if (num_Secreto[j+1] == ev.target.value){
+                else if (num_Secreto[j+1] == ev.target.value){
                     pantalla1.innerHTML = num_Secreto[j+1]
-                    aciertos.push((Math.floor(pantalla1.innerHTML)));
+                    aciertos.push(num_Secreto[j+1] );
                     num_Secreto[j+1]  = 11;
                 }
-                if (num_Secreto[j+2] == ev.target.value){
+                else if (num_Secreto[j+2] == ev.target.value){
                     pantalla2.innerHTML = num_Secreto[j+2] 
-                    aciertos.push((Math.floor(pantalla2.innerHTML)));
+                    aciertos.push(num_Secreto[j+2] );
                     num_Secreto[j+2]  = 11;
                    
                 }
-                if(num_Secreto[j+3] == ev.target.value){
+                else if(num_Secreto[j+3] == ev.target.value){
                     pantalla3.innerHTML = num_Secreto[j+3] 
-                    aciertos.push((Math.floor(pantalla3.innerHTML))); 
+                    aciertos.push(num_Secreto[j+3] ); 
                     num_Secreto[j+3]  = 11;
                 }
                 console.log("ACIERTOS", aciertos)
@@ -124,7 +124,7 @@ reset.onclick = () => {
     pantalla0.innerHTML = "*";
     pantalla1.innerHTML = "*";
     pantalla2.innerHTML = "*";
-    pantalla0.innerHTML = "*";
+    pantalla3.innerHTML = "*";
     }
     
 
