@@ -1,15 +1,19 @@
 //ARRAY NUM SECRETO
 var num_Secreto = [];
-n = 0;
+
 aciertos =[]; 
 
 //CLAVE SECRETA SERÁ UN NUMERO ALEATORIA DE 4 DIGITOS 
-for (var i = 0; i < 4; i++) { //0-9    
-    n += i;
-    num1 = Math.floor(Math.random()*10);
-    num_Secreto.push(num1);
-    console.log(num1);
-  }
+//hacer función para llamar
+function CrearNumSecreto(secreto){
+    for (var i = 0; i < 4; i++) { //0-9    
+    
+        num1 = Math.floor(Math.random()*10);
+        secreto.push(num1);
+        console.log(num1);
+    }
+}
+CrearNumSecreto(num_Secreto)
 console.log(num_Secreto)
 
 //-- Elementos de la interfaz de la calculadora
@@ -56,28 +60,33 @@ for (let boton of digitos) {
         crono.start();
         //tiene que cambiar en orden
            //si tengo dos iguales se ponen los dos
-            for(j = 0; j < num_Secreto.length; j++)  { 
+            for(j = 0; j < num_Secreto.length; j++)  {
+
                 if (num_Secreto[j] == ev.target.value){
                     pantalla0.innerHTML = num_Secreto[j] 
                     aciertos.push((Math.floor(pantalla0.innerHTML)));
+                    num_Secreto[j] = 11;
                 }
                 if (num_Secreto[j+1] == ev.target.value){
                     pantalla1.innerHTML = num_Secreto[j+1]
                     aciertos.push((Math.floor(pantalla1.innerHTML)));
+                    num_Secreto[j+1]  = 11;
                 }
                 if (num_Secreto[j+2] == ev.target.value){
                     pantalla2.innerHTML = num_Secreto[j+2] 
                     aciertos.push((Math.floor(pantalla2.innerHTML)));
+                    num_Secreto[j+2]  = 11;
+                   
                 }
-                if (num_Secreto[j+3] == ev.target.value){
+                if(num_Secreto[j+3] == ev.target.value){
                     pantalla3.innerHTML = num_Secreto[j+3] 
-                    aciertos.push((Math.floor(pantalla3.innerHTML)));
-                    
+                    aciertos.push((Math.floor(pantalla3.innerHTML))); 
+                    num_Secreto[j+3]  = 11;
                 }
-                console.log("ÑEÑEÑEÑ", aciertos)
+                console.log("ACIERTOS", aciertos)
                 break
                 
-            }  
+            }  //función de recursividad
             if (num_Secreto.length==aciertos.length){
                 crono.stop();
             }
@@ -87,11 +96,6 @@ for (let boton of digitos) {
 
 console.log("Ejecuitando JS...");
 
-
-//-- Poner a cero la expresion quitar despues
-reset.onclick = () => {
-display.innerHTML = "0:0:0";
-}
 
 //---- Configurar las funciones de retrollamada
 
@@ -114,6 +118,15 @@ gui.reset.onclick = () => {
 }
 
 
+//-- Poner a cero la expresion quitar despues
+reset.onclick = () => {
+    display.innerHTML = "0:0:0";
+    pantalla0.innerHTML = "*";
+    pantalla1.innerHTML = "*";
+    pantalla2.innerHTML = "*";
+    pantalla0.innerHTML = "*";
+    }
+    
 
 
 
