@@ -1,5 +1,5 @@
 body{
-    background-color: rgba(0, 255, 255, 0.592);
+    background-image: url("fondofeo3.jpg");
 }
 .digito {
     width: 70px; 
@@ -7,7 +7,7 @@ body{
     font-family: Arial; 
     font-size: 32px; 
     cursor: hand; 
-    background-color: rgb(145, 243, 241);
+    background-color: rgb(237, 98, 255);
     
 }
 * {
@@ -24,10 +24,10 @@ body{
 
 .calculadora {
     display: grid;
-    grid-template-columns: repeat(4, 75px);
+    grid-template-columns: repeat(4, 90px);
     grid-template-rows: 160px repeat(5, 75px);
-    background-color: #00916e;
-    padding: 15px;
+    background-image: url("fondofeo2.jpg");
+    padding: 10px;
     border-radius: 32px;
     box-shadow: 15px 10px 0px 5px #00000033;
 }
@@ -43,56 +43,57 @@ button {
     border-radius: 32px;
     font-size: 1.5em;
     border: none;
-    background-color: #00916e;
+    background-color: #9c4ae4;
     box-shadow: 5px 5px 10px -3px #00000040, -5px -5px 15px 3px #00ffc11f;
 }
 #pantalla0{
-    font-size: 28px; 
+    color: #91ff00;
+    font-size: 38px; 
     position: relative;
-    right: 230px;
+    right: 190px;
+    bottom: 20px;
+    
 }
 #pantalla1{
-    font-size: 28px; 
+    color: #91ff00;
+    font-size: 38px; 
     position: relative;
-    right: 200px;
-    bottom: 87px;
+    right: 140px;
+    bottom: 140px;
     
 }
 #pantalla2{
-    font-size: 28px; 
+    color: #91ff00;
+    font-size: 38px; 
     position: relative;
-    right: 160px;
-    bottom: 175px;
+    right: 90px;
+    bottom: 261px;
 }
 #pantalla3{
-    font-size: 28px; 
+    color: #91ff00;
+    font-size: 38px; 
     position: relative;
-    right: 109px;
-    bottom: 263px;
+    right: 40px;
+    bottom: 381px;
 }
 button:active {
-    background-color: #006f54;
+    background-color: #7500a3;
 }
 
 button:focus {
     outline: none;
 }
 
-.col-2 {
-    grid-column: span 2;
-}
-
-
 .pantalla {
     grid-column: 1 / -1;
-    padding: 16px;
+    padding: 30px;
     display: flex;
-    margin: 10px 10px 20px;
+    margin: 10px 10px 25px;
     flex-direction: column;
     align-items: flex-end;
     background-color: #363636;
     border-radius: 32px;
-    text-align: right;
+    text-align:justify;
     justify-content: space-between;
     word-break: break-all;
     box-shadow: 0px 0px 0px 10px #00000033;
