@@ -1,19 +1,22 @@
 //ARRAY NUM SECRETO
 var num_Secreto = [];
 
-aciertos =[]; 
+var aciertos = [];
 
+var i;
+var num1;
+var console;
 
 //CLAVE SECRETA SERÁ UN NUMERO ALEATORIA DE 4 DIGITOS 
 //hacer función para llamar
-function CrearNumSecreto(secreto){
-    for (var i = 0; i < 4; i++) { //0-9    
-        num1 = Math.floor(Math.random()*10);
+function CrearNumSecreto(secreto) {
+    for (i = 0; i < 4; i++) { //0-9   
+        num1 = Math.floor(Math.random() * 10);
         secreto.push(num1);
     }
 }
 CrearNumSecreto(num_Secreto);
-console.log('NUMERO SECRETO',num_Secreto)
+console.log('NUMERO SECRETO', num_Secreto);
 
 //-- Elementos de la interfaz de la calculadora
 //-- Estados de la calculadora
@@ -147,7 +150,3 @@ reset.onclick = () => {
     CrearNumSecreto(num_Secreto);
     console.log('NUMERO SECRETO',num_Secreto)
 }
-    
-
-
-
