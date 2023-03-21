@@ -1,9 +1,7 @@
 //ARRAY NUM SECRETO
 var num_Secreto = [];
-
 var aciertos = [];
-
-var i;
+var i;  //para no tener el error al validar
 var num1;
 var console;
 
