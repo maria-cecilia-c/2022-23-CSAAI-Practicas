@@ -14,38 +14,29 @@ let x = 0;
 let y = 10;
 
 //-- Velocidad horizontal del objeto
-let velx = 1;
+
 //-------------------DESLIZADORES------------------------------------
 const range = document.getElementById("range");
+const range2 = document.getElementById("range2");
 const angulo = document.getElementById("angulo");
-const angulo2 = document.getElementById("angulo2");
 const velocidad = document.getElementById("velocidad");
-const velocidad2 = document.getElementById("velocidad2");
-
 
 range.oninput = () => {
     angulo.innerHTML = range.value;
 }
 
-range.onchange = () => {
-    angulo2.innerHTML = range.value;
+range2.oninput = () => {
+    velocidad.innerHTML = range2.value;
 }
 
-range.oninput = () => {
-    velocidad.innerHTML = range.value;
-}
-
-range.onchange = () => {
-    velocidad2.innerHTML = range.value;
-}
 //------------------------------
 
-
+var velx = 0;
 //-- Función principal de animacion
 function update() 
 {
   console.log("test");
-  x = x + velx;
+  x = x +  velocidad.innerHTML ;
 
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
