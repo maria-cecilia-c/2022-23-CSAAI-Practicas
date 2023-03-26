@@ -38,8 +38,7 @@
         var z = 3;
         var gl;
         var count = 0.0;
-        var countUp = 0.0;
-
+       
         function init() {
             // Get canvas object from the DOM
             var canvas = document.getElementById("myCanvas");
@@ -196,7 +195,6 @@
 		
         function initProjection(gl, canvas) {
             //PROJECTION
-    
            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
                 document.addEventListener('wheel', function (event) {
                     z = event.wheelDelta > 0 ? z - 0.01 : z + 0.01;  //con 0.01 se puede ver mejor el desplazamineto de la camara
@@ -215,6 +213,7 @@
                 var vMatrix = glMatrix.mat4.lookAt(glMatrix.mat4.create(), [0, 3,  z], [0, 0, 0], [0, 1, 0]);
                 gl.uniformMatrix4fv(vMatrixUniform, false, vMatrix);
                 
+
 
             }
             else if (projectionValue == "orthographic"){
@@ -325,6 +324,7 @@
 <body onload="init()">
     <canvas id="myCanvas" width="640" height="480"></canvas><br>
     Step: <input type="text" value="0.01" id="step">
+    <br>
     <b>Rotation</b>
     <input type="checkbox" name="rotation" checked>
     <input type="range" id="speed" min="1" max="3" value="1" step="1"> Speed<br>
