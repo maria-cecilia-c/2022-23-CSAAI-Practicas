@@ -235,21 +235,35 @@
             gl.uniform1i(fragmentSamplerUniform, unitNumber);
         }
 
-        function drawScene() {
+        function drawScene() { //NO GIRA SIEMPRE
             // Clear
             gl.clear(gl.COLOR_BUFFER_BIT);
 
-            // Rotate
-            var mvMatrix = glMatrix.mat4.fromRotation(glMatrix.mat4.create(), count, [0.5, 0.5, 0.5]);
-            var uMvMatrix = gl.getUniformLocation(gl.program, "u_mvMatrix");
-            gl.uniformMatrix4fv(uMvMatrix, false, mvMatrix);
-
-            // Draw
-            gl.drawElements(gl.TRIANGLES, 15 * 6, gl.UNSIGNED_SHORT, 0);
-
+            // sentencias
+            var speed = document.getElementById("speed").value; //valor de 1, para que no este quieto
+            var rotationChecked = document.querySelector('input[name="rotation"]:checked');
+            var primitiveValue = document.querySelector('input[name="primitive"]:checked').value;
+            var canvas = document.getElementById("myCanvas");
+            //ROTATION
+            if (rotationChecked){
+                var mvMatrix = glMatrix.mat4.fromYRotation(glMatrix.mat4.create(), count*speed);
+                var uMvMatrix = gl.getUniformLocation(gl.program, "u_mvMatrix");
+                gl.uniformMatrix4fv(uMvMatrix, false, mvMatrix);
+            }
+            //PROJECTION
+            var canvas = document.getElementById("myCanvas");
+            initProjection(gl, canvas);
+            // Draw gl.LINE_STRIP
+            if (primitiveValue == "lines"){
+                gl.drawElements(gl.LINE_STRIP, 15 * 6, gl.UNSIGNED_SHORT, 0);
+            }
+            else if (primitiveValue == "triangles"){
+                gl.drawElements(gl.TRIANGLES, 15 * 6, gl.UNSIGNED_SHORT, 0);
+            }
             // Call drawScene again in the next browser repaint
-            count += 0.01;
+            count += 0.01
             requestAnimationFrame(drawScene);
+
         }
 
         function initShaders(gl, vs_source, fs_source) {
@@ -285,7 +299,16 @@
 </head>
 
 <body onload="init()">
-    <canvas id="myCanvas" width="640" height="480"></canvas>
+    <canvas id="myCanvas" width="640" height="480"></canvas><br>
+    <b>Rotation</b>
+    <input type="checkbox" name="rotation" checked>
+    <input type="range" id="speed" min="1" max="3" value="1" step="1"> Speed<br>
+    <b>WebGL primitive</b>
+    <input type="radio" name="primitive" value="triangles" checked> Triangles
+    <input type="radio" name="primitive" value="lines"> Lines<br>
+    <b>Projection type</b>
+    <input type="radio" name="projection" value="perspective" checked> Perspective
+    <input type="radio" name="projection" value="orthographic"> Orthographic<br>
 </body>
 
 </html>
