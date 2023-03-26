@@ -8,21 +8,28 @@
 
     <script id="shaderVs" type="x-shader/x-vertex">
         attribute vec4 a_Position;
-        attribute vec3 a_Color;
+	    attribute vec2 a_TexCoord;
+        varying vec2 v_TexCoord;
+
         uniform mat4 u_pMatrix;
         uniform mat4 u_vMatrix;
         uniform mat4 u_mvMatrix;
         varying highp vec4 v_Color;
-        void main() {
-            gl_Position = u_pMatrix * u_vMatrix * u_mvMatrix * a_Position;
-            v_Color = vec4(a_Color, 1.0);
+        void main(void) {
+            vec4 color0 = texture2D(u_Sampler0, v_TexCoord);
+            vec4 color1 = texture2D(u_Sampler1, v_TexCoord);
+            gl_FragColor = color0 * color1;
         }
     </script>
 
     <script id="shaderFs" type="x-shader/x-fragment">
-        varying highp vec4 v_Color;
-        void main() {
-            gl_FragColor = v_Color;
+        precision mediump float;
+        uniform sampler2D u_Sampler0;
+        uniform sampler2D u_Sampler1;
+        varying vec2 v_TexCoord;
+
+        void main(void) {
+            gl_FragColor = texture2D(u_Sampler, v_TexCoord);
         }
     </script>
 
@@ -62,93 +69,67 @@
 
             // Draw Scene
             drawScene();
+
+            // Init textures
+            initTexturesAndDraw(gl);
         }
 
-        function drawScene() { //NO GIRA SIEMPRE
-            // Clear
-            gl.clear(gl.COLOR_BUFFER_BIT);
-
-            // sentencias
-            var speed = document.getElementById("speed").value; //valor de 1, para que no este quieto
-            var rotationChecked = document.querySelector('input[name="rotation"]:checked');
-            var primitiveValue = document.querySelector('input[name="primitive"]:checked').value;
-            var canvas = document.getElementById("myCanvas");
-            //ROTATION
-            if (rotationChecked){
-                var mvMatrix = glMatrix.mat4.fromYRotation(glMatrix.mat4.create(), count*speed);
-                var uMvMatrix = gl.getUniformLocation(gl.program, "u_mvMatrix");
-                gl.uniformMatrix4fv(uMvMatrix, false, mvMatrix);
-            }
-            //PROJECTION
-            var canvas = document.getElementById("myCanvas");
-            initProjection(gl, canvas);
-            // Draw gl.LINE_STRIP
-            if (primitiveValue == "lines"){
-                gl.drawElements(gl.LINE_STRIP, 15 * 6, gl.UNSIGNED_SHORT, 0);
-            }
-            else if (primitiveValue == "triangles"){
-                gl.drawElements(gl.TRIANGLES, 15 * 6, gl.UNSIGNED_SHORT, 0);
-            }
-            // Call drawScene again in the next browser repaint
-            count += 0.01
-            requestAnimationFrame(drawScene);
-
-        }
+        
 
         function initVertexShader(gl) {
-            // Vertexes and colors  (X, Y, Z, R, G, B)
-            var vertexesAndColors = [
+              // Vertexes and texture coordinates
+            var vertexesAndTextures = [
                	// Primera piŕamide
-                0, 0.6, 0,          0, 1, 0, // v0 pico
-                -0.35, 0.1, 0.35,    1, 1, 1, // v1 
-                0.35, 0.1, 0.35,     1, 1, 1, // v2 
-                0.35, 0.1, -0.35,     1, 1, 1, // v3
-                -0.35, 0.1, -0.35,     1, 1, 1, // v4
+                0, 0.6, 0,          0.0, 0.0, // v0 pico
+                -0.35, 0.1, 0.35,    0.0, 0.5, // v1 
+                0.35, 0.1, 0.35,     0.5, 0.5, // v2 
+                0.35, 0.1, -0.35,     1, 1,  // v3
+                -0.35, 0.1, -0.35,     1, 1,  // v4
                 
 				// SEGUNDA piramide
-                0, 0.4, 0,          0, 1, 0, // v5
-                -0.5, -0.2, 0.5,    1, 1, 1, // v6
-                0.5, -0.2, 0.5,     1, 1, 1, // v7 
-                0.5, -0.2, -0.5,     1, 1, 1, // v8
-                -0.5, -0.2, -0.5,     1, 1, 1, // v9
+                0, 0.4, 0,          0, 1,  // v5
+                -0.5, -0.2, 0.5,    1, 1,  // v6
+                0.5, -0.2, 0.5,     1, 1,  // v7 
+                0.5, -0.2, -0.5,     1, 1,  // v8
+                -0.5, -0.2, -0.5,     1, 1,  // v9
                 
 				// TERCERA piramide
-                0, 0.2, 0,          0, 1, 0, // v10
-                -0.6, -0.5, 0.6,    1, 1, 1, // v11
-                0.6, -0.5, 0.6,     1, 1, 1, // v12
-                0.6, -0.5, -0.6,     1, 1, 1, // v13
-                -0.6, -0.5, -0.6,     1, 1, 1, // v14
+                0, 0.2, 0,          0, 1, // v10
+                -0.6, -0.5, 0.6,    1, 1, // v11
+                0.6, -0.5, 0.6,     1, 1,  // v12
+                0.6, -0.5, -0.6,     1, 1,  // v13
+                -0.6, -0.5, -0.6,     1, 1,// v14
  
                 //bases piramide 1
-                -0.35, 0.1, 0.35,    0, 1, 0, // v15
-                0.35, 0.1, 0.35,     0, 1, 0, // v16
-                0.35, 0.1, -0.35,     0, 1, 0, // v17
-                -0.35, 0.1, -0.35,     0, 1, 0, // v18
+                -0.35, 0.1, 0.35,    0, 1,  // v15
+                0.35, 0.1, 0.35,     0, 1,  // v16
+                0.35, 0.1, -0.35,     0, 1,  // v17
+                -0.35, 0.1, -0.35,     0, 1,  // v18
 
                 //bases piramide 2
-                -0.5, -0.2, 0.5,    0, 1, 0, // v19
-                0.5, -0.2, 0.5,     0, 1, 0, // v20
-                0.5, -0.2, -0.5,     0, 1, 0, // v21
-                -0.5, -0.2, -0.5,     0, 1, 0, // v22
+                -0.5, -0.2, 0.5,    0, 1,  // v19
+                0.5, -0.2, 0.5,     0, 1,  // v20
+                0.5, -0.2, -0.5,     0, 1,  // v21
+                -0.5, -0.2, -0.5,     0, 1,  // v22
 
                 //bases piramide 3
-                -0.6, -0.5, 0.6,    0, 1, 0, // v23
-                0.6, -0.5, 0.6,     0, 1, 0, // v24
-                0.6, -0.5, -0.6,     0, 1, 0, // v25
-                -0.6, -0.5, -0.6,     0, 1, 0, // v26
+                -0.6, -0.5, 0.6,    0, 1,  // v23
+                0.6, -0.5, 0.6,     0, 1,  // v24
+                0.6, -0.5, -0.6,     0, 1,  // v25
+                -0.6, -0.5, -0.6,     0, 1,  // v26
 
 
                 //TRONCO arrbia
-                -0.2, -0.5, 0.2,    0.42, 0.23, 0.16, // v27
-                0.2, -0.5, 0.2,     0.42, 0.23, 0.16, // v28
-                0.2, -0.5, -0.2,     0.42, 0.23, 0.16,// v29
-                -0.2, -0.5, -0.2,    0.42, 0.23, 0.16, // v30
+                -0.2, -0.5, 0.2,    0.42, 0.23,  // v27
+                0.2, -0.5, 0.2,     0.42, 0.23, // v28
+                0.2, -0.5, -0.2,     0.42, 0.23, // v29
+                -0.2, -0.5, -0.2,    0.42, 0.23,  // v30
 
                  //TRONCO abajo
-                -0.2, -0.9, 0.2,    0.42, 0.23, 0.16, // v31
-                0.2, -0.9, 0.2,     0.42, 0.23, 0.16, // v32
-                0.2, -0.9, -0.2,     0.42, 0.23, 0.16,// v33
-                -0.2, -0.9, -0.2,    0.42, 0.23, 0.16, // v34
+                -0.2, -0.9, 0.2,    0.42, 0.23, // v31
+                0.2, -0.9, 0.2,     0.42, 0.23,  // v32
+                0.2, -0.9, -0.2,     0.42, 0.23, // v33
+                -0.2, -0.9, -0.2,    0.42, 0.23, // v34
 
 
             ];
@@ -200,15 +181,15 @@
 
             // Write a_Position and a_Color using gl.ARRAY_BUFFER
             gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
-            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexesAndColors), gl.STATIC_DRAW);
+            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertexesAndTextures), gl.STATIC_DRAW);
 
             var vertexPositionAttribute = gl.getAttribLocation(gl.program, "a_Position");
             gl.enableVertexAttribArray(vertexPositionAttribute);
-            gl.vertexAttribPointer(vertexPositionAttribute, 3, gl.FLOAT, false, 4 * (3 + 3), 0);
+            gl.vertexAttribPointer(vertexPositionAttribute, 3, gl.FLOAT, false, 4 * (3 + 2), 0);
 
-            var vertexColorAttribute = gl.getAttribLocation(gl.program, "a_Color");
+            var vertexColorAttribute = gl.getAttribLocation(gl.program, "a_TexCoord");
             gl.enableVertexAttribArray(vertexColorAttribute);
-            gl.vertexAttribPointer(vertexColorAttribute, 3, gl.FLOAT, false, 4 * (3 + 3), 4 * 3);
+            gl.vertexAttribPointer(vertexColorAttribute, 2, gl.FLOAT, false, 4 * (3 + 2), 4 * 3);
 
             // Write indexes in gl.ELEMENT_ARRAY_BUFFER
             gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, gl.createBuffer());
@@ -219,6 +200,67 @@
 			return g*Math.PI/180;
 		}
 
+        function initTexturesAndDraw(gl) {
+        var image0 = new Image();
+        image0.src = 'tree.jpg';
+        var image1 = new Image();
+        image1.src = 'light.gif';
+        image0.onload = function () {
+            loadTexture(gl, "u_Sampler0", image0, 0, true);
+            image1.onload = function () {
+                loadTexture(gl, "u_Sampler1", image1, 1, true);
+                drawScene(gl);
+            };
+        };
+        }
+
+        function loadTexture(gl, samplerUniform, image, unitNumber, flip) {
+        // Flip the image's y axis
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, flip);
+
+        // Activate and configure texture
+        gl.activeTexture(gl.TEXTURE0 + unitNumber);
+        gl.bindTexture(gl.TEXTURE_2D, gl.createTexture());
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+
+        // Set texture to the sampler
+        var fragmentSamplerUniform = gl.getUniformLocation(gl.program, samplerUniform);
+        gl.uniform1i(fragmentSamplerUniform, unitNumber);
+        }
+
+        function drawScene() { //NO GIRA SIEMPRE
+            // Clear
+            gl.clear(gl.COLOR_BUFFER_BIT);
+
+
+            // sentencias
+            var speed = document.getElementById("speed").value; //valor de 1, para que no este quieto
+            var rotationChecked = document.querySelector('input[name="rotation"]:checked');
+            var primitiveValue = document.querySelector('input[name="primitive"]:checked').value;
+            var canvas = document.getElementById("myCanvas");
+            //ROTATION
+            if (rotationChecked){
+                var mvMatrix = glMatrix.mat4.fromYRotation(glMatrix.mat4.create(), count*speed);
+                var uMvMatrix = gl.getUniformLocation(gl.program, "u_mvMatrix");
+                gl.uniformMatrix4fv(uMvMatrix, false, mvMatrix);
+            }
+            //PROJECTION
+            var canvas = document.getElementById("myCanvas");
+            initProjection(gl, canvas);
+            // Draw gl.LINE_STRIP
+            if (primitiveValue == "lines"){
+                gl.drawElements(gl.LINE_STRIP, 15 * 6, gl.UNSIGNED_SHORT, 0);
+            }
+            else if (primitiveValue == "triangles"){
+                gl.drawElements(gl.TRIANGLES, 15 * 6, gl.UNSIGNED_SHORT, 0);
+            }
+            // Call drawScene again in the next browser repaint
+            count += 0.01
+            requestAnimationFrame(drawScene);
+
+        }
+        
         function initProjection(gl, canvas) {
             //PROJECTION
            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
@@ -250,29 +292,31 @@
                 console.log("dale ma")
                 
             }
-
-            
-
-           
             
         }
 
         function initShaders(gl, vs_source, fs_source) {
-            // Compile shaders
-            var vertexShader = makeShader(gl, vs_source, gl.VERTEX_SHADER);
-            var fragmentShader = makeShader(gl, fs_source, gl.FRAGMENT_SHADER);
+        // Compile shaders
+        var vertexShader = makeShader(gl, vs_source, gl.VERTEX_SHADER);
+        var fragmentShader = makeShader(gl, fs_source, gl.FRAGMENT_SHADER);
 
-            // Create program
-            var glProgram = gl.createProgram();
+        // Create program
+        var glProgram = gl.createProgram();
 
-            // Attach and link shaders to the program
-            gl.attachShader(glProgram, vertexShader);
-            gl.attachShader(glProgram, fragmentShader);
-            gl.linkProgram(glProgram);
+        // Attach and link shaders to the program
+        gl.attachShader(glProgram, vertexShader);
+        gl.attachShader(glProgram, fragmentShader);
+        gl.linkProgram(glProgram);
+        if (!gl.getProgramParameter(glProgram, gl.LINK_STATUS)) {
+            alert("Unable to initialize the shader program");
+            return false;
+        }
 
-            // Use program
-            gl.useProgram(glProgram);
-            gl.program = glProgram;
+        // Use program
+        gl.useProgram(glProgram);
+        gl.program = glProgram;
+
+        return true;
         }
 
         function makeShader(gl, src, type) {
