@@ -237,7 +237,7 @@
             gl.uniformMatrix4fv(uMvMatrix, false, mvMatrix);
 
             // Draw
-            gl.drawElements(gl.TRIANGLES, 6 * 2 * 3, gl.UNSIGNED_SHORT, 0);
+            gl.drawElements(gl.TRIANGLES, 15 * 6, gl.UNSIGNED_SHORT, 0);
 
             // Call drawScene again in the next browser repaint
             count += 0.01;
