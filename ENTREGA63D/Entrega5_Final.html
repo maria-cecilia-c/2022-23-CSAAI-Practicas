@@ -236,7 +236,7 @@
                 gl.uniformMatrix4fv(pMatrixUniform, false, pMatrix);
                 console.log("dale pe")
 
-                var vMatrix = glMatrix.mat4.lookAt(glMatrix.mat4.create(), [0, 0,  z], [0, 0, 0], [0, 1, 0]);
+                var vMatrix = glMatrix.mat4.lookAt(glMatrix.mat4.create(), [0, 3,  z], [0, 0, 0], [0, 1, 0]);
                 gl.uniformMatrix4fv(vMatrixUniform, false, vMatrix);
                 
             }
