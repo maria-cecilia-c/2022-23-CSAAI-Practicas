@@ -252,6 +252,7 @@
             image1.src = 'light.jpg';
             image0.onload = function () {
             loadTexture(gl, "u_Sampler0", image0, 0, true);
+            drawScene(gl);
             image1.onload = function () {
                 if (luces == "Yes"){
                     loadTexture(gl, "u_Sampler1", image1, 1, true);
