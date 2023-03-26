@@ -35,6 +35,7 @@
 
     <script>
         
+        var z = 3;
         var gl;
         var count = 0.0;
 
@@ -220,8 +221,9 @@
                 var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
                 var vMatrix = glMatrix.mat4.lookAt(glMatrix.mat4.create(), [1, 1, 1], [1, 1, 1], [1, 1, 1]);
                 gl.uniformMatrix4fv(vMatrixUniform, false, vMatrix);
-                console.log("dale ma")
+                console.log("dale ma") 
             }
+            
         }
 
         function initTexturesAndDraw(gl) {
