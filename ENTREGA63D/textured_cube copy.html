@@ -235,6 +235,7 @@
             if (luces=="No"){
                 image0.onload = function () {
                 loadTexture(gl, "u_Sampler0", image0, 0, true);
+                drawScene(gl);
                 };
             }
             else if (luces =="Yes"){
