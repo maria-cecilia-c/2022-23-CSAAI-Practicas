@@ -240,7 +240,7 @@
 
             var vertexPositionAttribute = gl.getAttribLocation(gl.program, "a_Position");
             gl.enableVertexAttribArray(vertexPositionAttribute);
-            gl.vertexAttribPointer(vertexPositionAttribute, 3, gl.FLOAT, false, 4 * (3 + 3), 0);
+            gl.vertexAttribPointer(vertexPositionAttribute, 3, gl.FLOAT, false, 4 * (3 + 2), 0);
 
             var vertexColorAttribute = gl.getAttribLocation(gl.program, "a_TexCoord");
             gl.enableVertexAttribArray(vertexColorAttribute);
