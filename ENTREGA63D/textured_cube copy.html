@@ -245,6 +245,7 @@
 
         function initTexturesAndDraw(gl) {
             var luces = document.querySelector('input[name="christmas"]:checked').value;
+
             var image0 = new Image();
             image0.src = 'tree.jpg';
             var image1 = new Image();
@@ -261,7 +262,7 @@
                 }
                 
             };
-        };
+            };
         }
 
         function loadTexture(gl, samplerUniform, image, unitNumber, flip) {
