@@ -39,6 +39,7 @@
         var gl;
         var count = 0.0;
         var countUp = 0.0;
+
         function init() {
             // Get canvas object from the DOM
             var canvas = document.getElementById("myCanvas");
@@ -219,6 +220,7 @@
                     switch (ev.keyCode) {
                         case 38: // Up 
                         countUp += 1;
+                        console.log("teclaaaa")
                         break;
 
                         case 40: // Down
