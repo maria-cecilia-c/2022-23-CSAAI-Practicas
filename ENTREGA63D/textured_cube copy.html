@@ -200,6 +200,15 @@
                     z = event.wheelDelta > 0 ? z - 0.01 : z + 0.01;  //con 0.01 se puede ver mejor el desplazamineto de la camara
                 });
 
+                document.addEventListener('keydown', (event) => {
+                    if (event.ctrlKey) {
+                        if (event.keyCode == 38) {
+                        console.log("You have just pressed teclña");
+                    }
+                }
+
+                }, false);
+
 
             var projectionValue = document.querySelector('input[name="projection"]:checked').value;
             var ratio = canvas.width / canvas.height;
@@ -210,7 +219,7 @@
                 gl.uniformMatrix4fv(pMatrixUniform, false, pMatrix);
                 console.log("dale pe")
 
-                var vMatrix = glMatrix.mat4.lookAt(glMatrix.mat4.create(), [0, 3,  z], [0, 0, 0], [0, 1, 0]);
+                var vMatrix = glMatrix.mat4.lookAt(glMatrix.mat4.create(), [0, 0,  z], [0, 0, 0], [0, 1, 0]);
                 gl.uniformMatrix4fv(vMatrixUniform, false, vMatrix);
                 
 
