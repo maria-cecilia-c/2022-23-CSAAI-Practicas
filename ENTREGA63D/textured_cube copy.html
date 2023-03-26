@@ -196,6 +196,22 @@
 		
         function initProjection(gl, canvas) {
             //PROJECTION
+            document.onkeydown = function (ev) {
+                var step = new Number(document.getElementById("step").value);
+                    switch (ev.keyCode) {
+                        case 38: // Up 
+                        countUp += step;
+                        console.log("teclaaaa")
+                        break;
+
+                        case 40: // Down
+                        countUp -= step;
+                        break;
+                    }
+                    requestAnimationFrame(drawScene);
+            }
+
+
            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
                 document.addEventListener('wheel', function (event) {
                     z = event.wheelDelta > 0 ? z - 0.01 : z + 0.01;  //con 0.01 se puede ver mejor el desplazamineto de la camara
@@ -215,20 +231,7 @@
                 gl.uniformMatrix4fv(vMatrixUniform, false, vMatrix);
                 
 
-                document.onkeydown = function (ev) {
-                    var step = new Number(document.getElementById("step").value);
-                    switch (ev.keyCode) {
-                        case 38: // Up 
-                        countUp += 1;
-                        console.log("teclaaaa")
-                        break;
-
-                        case 40: // Down
-                        countUp -= 1;
-                        break;
-                    }
-                    requestAnimationFrame(drawScene);
-                }
+                
 
 
 
@@ -341,6 +344,7 @@
 
 <body onload="init()">
     <canvas id="myCanvas" width="640" height="480"></canvas><br>
+    Step: <input type="text" value="0.01" id="step">
     <b>Rotation</b>
     <input type="checkbox" name="rotation" checked>
     <input type="range" id="speed" min="1" max="3" value="1" step="1"> Speed<br>
