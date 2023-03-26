@@ -200,15 +200,6 @@
                     z = event.wheelDelta > 0 ? z - 0.01 : z + 0.01;  //con 0.01 se puede ver mejor el desplazamineto de la camara
                 });
 
-                document.addEventListener('keydown', (event) => {
-                    if (event.ctrlKey) {
-                        if (event.keyCode == 38) {
-                        console.log("You have just pressed teclña");
-                    }
-                }
-
-                }, false);
-
 
             var projectionValue = document.querySelector('input[name="projection"]:checked').value;
             var ratio = canvas.width / canvas.height;
