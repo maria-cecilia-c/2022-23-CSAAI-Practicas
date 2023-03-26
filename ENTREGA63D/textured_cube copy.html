@@ -196,21 +196,7 @@
 		
         function initProjection(gl, canvas) {
             //PROJECTION
-            document.onkeydown = function (ev) {
-                var step = new Number(document.getElementById("step").value);
-                    switch (ev.keyCode) {
-                        case 38: // Up 
-                        countUp += step;
-                        console.log("teclaaaa")
-                        break;
-
-                        case 40: // Down
-                        countUp -= step;
-                        break;
-                    }
-            }
-
-
+    
            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
                 document.addEventListener('wheel', function (event) {
                     z = event.wheelDelta > 0 ? z - 0.01 : z + 0.01;  //con 0.01 se puede ver mejor el desplazamineto de la camara
@@ -226,7 +212,7 @@
                 gl.uniformMatrix4fv(pMatrixUniform, false, pMatrix);
                 console.log("dale pe")
 
-                var vMatrix = glMatrix.mat4.lookAt(glMatrix.mat4.create(), [0, countUp,  z], [0, 0, 0], [0, 1, 0]);
+                var vMatrix = glMatrix.mat4.lookAt(glMatrix.mat4.create(), [0, 3,  z], [0, 0, 0], [0, 1, 0]);
                 gl.uniformMatrix4fv(vMatrixUniform, false, vMatrix);
                 
 
