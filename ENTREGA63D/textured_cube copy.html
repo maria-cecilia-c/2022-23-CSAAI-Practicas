@@ -208,7 +208,6 @@
                         countUp -= step;
                         break;
                     }
-                    requestAnimationFrame(drawScene);
             }
 
 
@@ -230,11 +229,6 @@
                 var vMatrix = glMatrix.mat4.lookAt(glMatrix.mat4.create(), [0, countUp,  z], [0, 0, 0], [0, 1, 0]);
                 gl.uniformMatrix4fv(vMatrixUniform, false, vMatrix);
                 
-
-                
-
-
-
 
             }
             else if (projectionValue == "orthographic"){
