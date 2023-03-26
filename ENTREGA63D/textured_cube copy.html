@@ -34,7 +34,7 @@
     </script>
 
     <script>
-
+        var y = 0;
         var z = 3;
         var gl;
         var count = 0.0;
@@ -200,6 +200,21 @@
                     z = event.wheelDelta > 0 ? z - 0.01 : z + 0.01;  //con 0.01 se puede ver mejor el desplazamineto de la camara
                 });
 
+            document.onkeydown = function (ev) {
+              var step = new Number(document.getElementById("step").value);
+              switch (ev.keyCode) {
+            
+                  case 38: // Up 
+                  y += step;
+                  break;
+
+                  case 40: // Down
+                  y -= step;
+                  break;
+                  
+                }
+               
+            }
 
             var projectionValue = document.querySelector('input[name="projection"]:checked').value;
             var ratio = canvas.width / canvas.height;
@@ -210,7 +225,7 @@
                 gl.uniformMatrix4fv(pMatrixUniform, false, pMatrix);
                 console.log("dale pe")
 
-                var vMatrix = glMatrix.mat4.lookAt(glMatrix.mat4.create(), [0, 0,  z], [0, 0, 0], [0, 1, 0]);
+                var vMatrix = glMatrix.mat4.lookAt(glMatrix.mat4.create(), [0, y,  z], [0, 0, 0], [0, 1, 0]);
                 gl.uniformMatrix4fv(vMatrixUniform, false, vMatrix);
                 
 
@@ -323,7 +338,7 @@
 
 <body onload="init()">
     <canvas id="myCanvas" width="640" height="480"></canvas><br>
-    Step: <input type="text" value="0.01" id="step">
+    Step: <input type="text" value="0.10" id="step">
     <br>
     <b>Rotation</b>
     <input type="checkbox" name="rotation" checked>
