@@ -133,10 +133,10 @@
                 -0.2, -0.91, -0.2,    0.5, 0.5, // 38
 
                 //LATERAL tronco----
-                0.16, -0.5, 0.21,    1.0, 0.5,  // 39
-                0.16, -0.5, -0.21,     0.5, 0.5, // 40
-                0.16, -0.9, 0.21,    1.0, 0.0, // 41
-                0.16, -0.9, -0.21,     0.5, 0.0, // 42
+                0.26, -0.5, 0.21,    1.0, 0.5,  // 39
+                0.26, -0.5, -0.21,     0.5, 0.5, // 40
+                0.26, -0.9, 0.21,    1.0, 0.0, // 41
+                0.26, -0.9, -0.21,     0.5, 0.0, // 42
             ]
 
             // Indexes 96
@@ -213,10 +213,7 @@
 		
         function initProjection(gl, canvas) {
             //PROJECTION
-           var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
-                document.addEventListener('wheel', function (event) {
-                    z = event.wheelDelta > 0 ? z - 0.01 : z + 0.01;  //con 0.01 se puede ver mejor el desplazamineto de la camara
-                });
+           
 
             document.onkeydown = function (ev) {
               var step = new Number(document.getElementById("step").value);
@@ -304,6 +301,11 @@
         function drawScene() { //NO GIRA SIEMPRE
             // Clear
             gl.clear(gl.COLOR_BUFFER_BIT);
+
+            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
+                document.addEventListener('wheel', function (event) {
+                    z = event.wheelDelta > 0 ? z - 0.1 : z + 0.1;  //con 0.01 se puede ver mejor el desplazamineto de la camara
+                });
 
             // sentencias
             var speed = document.getElementById("speed").value; //valor de 1, para que no este quieto
