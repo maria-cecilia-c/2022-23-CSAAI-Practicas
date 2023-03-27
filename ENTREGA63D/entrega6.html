@@ -26,11 +26,11 @@
         uniform sampler2D u_Sampler0;
         uniform sampler2D u_Sampler1;
         varying vec2 v_TexCoord;
-        uniform float 3;
+        uniform int luces;
         void main(void) {
             vec4 color0 = texture2D(u_Sampler0, v_TexCoord);
             vec4 color1 = texture2D(u_Sampler1, v_TexCoord);
-            if (3){
+            if (luces == 3){
                 gl_FragColor = color0 * color1;
             }
             else {
