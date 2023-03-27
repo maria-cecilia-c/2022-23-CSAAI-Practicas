@@ -42,11 +42,7 @@
         function init() {
             // Get canvas object from the DOM
             var canvas = document.getElementById("myCanvas");
-            //
-            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
-                document.addEventListener('wheel', function (event) {
-                    z = event.wheelDelta > 0 ? z - 0.1 : z + 0.1;  
-                });
+           
             // Init WebGL context
             gl = canvas.getContext("webgl");
             if (!gl) {
@@ -77,7 +73,10 @@
         }
 
         function initVertexShader(gl) {
-            
+            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
+                document.addEventListener('wheel', function (event) {
+                    z = event.wheelDelta > 0 ? z - 0.1 : z + 0.1;  
+                });
             // Vertexes and texture coordinates
             var vertexesAndTextures = [
                 	// Primera piŕamide
