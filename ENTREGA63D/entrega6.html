@@ -26,11 +26,11 @@
         uniform sampler2D u_Sampler0;
         uniform sampler2D u_Sampler1;
         varying vec2 v_TexCoord;
-        uniform var luces;
+        uniform vec4 myvar = 3;
         void main(void) {
             vec4 color0 = texture2D(u_Sampler0, v_TexCoord);
             vec4 color1 = texture2D(u_Sampler1, v_TexCoord);
-            if (uniform == luces){
+            if (3){
                 gl_FragColor = color0 * color1;
             }
             else {
@@ -303,7 +303,7 @@
             var navidad = document.querySelector('input[name="christmas"]:checked').value;
             var luces = gl.getUniformLocation(gl.program, "luces");
             if (navidad == "Yes"){
-                gl.uniform1i(luces) = luces;
+                gl.uniform1i(luces) = 3;
             }
             else if(navidad =="No"){
                 gl.uniform1i(luces) = no;
