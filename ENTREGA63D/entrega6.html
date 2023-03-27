@@ -303,7 +303,7 @@
             var navidad = document.querySelector('input[name="christmas"]:checked').value;
             var luces = gl.getUniformLocation(gl.program, "luces");
             if (navidad == "Yes"){
-                gl.uniform1i(luces) = 3;
+                gl.uniform1i(luces) = 0;
             }
             else if(navidad =="No"){
                 gl.uniform1i(luces) = no;
