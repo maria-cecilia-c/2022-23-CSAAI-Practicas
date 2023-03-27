@@ -207,11 +207,6 @@
             // Write indexes in gl.ELEMENT_ARRAY_BUFFER
             gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, gl.createBuffer());
             gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indexes), gl.STATIC_DRAW);
-
-            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
-                document.addEventListener('wheel', function (event) {
-                    z = event.wheelDelta > 0 ? z - 0.1 : z + 0.1;  
-                });
         }
 
 		function toRadian(g){
@@ -298,7 +293,11 @@
         function drawScene() { //NO GIRA SIEMPRE
             // Clear
             gl.clear(gl.COLOR_BUFFER_BIT);
-
+            //
+            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
+                document.addEventListener('wheel', function (event) {
+                    z = event.wheelDelta > 0 ? z - 0.1 : z + 0.1;  
+                });
             // sentencias
             var speed = document.getElementById("speed").value; //valor de 1, para que no este quieto
             var rotationChecked = document.querySelector('input[name="rotation"]:checked');
