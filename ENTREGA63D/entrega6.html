@@ -61,6 +61,10 @@
             // Init projection matrix
             initProjection(gl, canvas);
 
+            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
+                document.addEventListener('wheel', function (event) {
+                    z = event.wheelDelta > 0 ? z - 0.1 : z + 0.1;  //con 0.01 se puede ver mejor el desplazamineto de la camara
+                });
             // Set clear canvas color
             gl.clearColor(0.0, 0.0, 0.0, 1.0);
 
@@ -213,10 +217,7 @@
 		
         function initProjection(gl, canvas) {
             //PROJECTION
-           var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
-                document.addEventListener('wheel', function (event) {
-                    z = event.wheelDelta > 0 ? z - 0.01 : z + 0.01;  //con 0.01 se puede ver mejor el desplazamineto de la camara
-                });
+           
 
             document.onkeydown = function (ev) {
               var step = new Number(document.getElementById("step").value);
