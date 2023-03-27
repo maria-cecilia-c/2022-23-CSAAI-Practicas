@@ -213,7 +213,10 @@
 		
         function initProjection(gl, canvas) {
             //PROJECTION
-           
+           var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
+                document.addEventListener('wheel', function (event) {
+                    z = event.wheelDelta > 0 ? z - 0.01 : z + 0.01;  //con 0.01 se puede ver mejor el desplazamineto de la camara
+                });
 
             document.onkeydown = function (ev) {
               var step = new Number(document.getElementById("step").value);
@@ -301,11 +304,6 @@
         function drawScene() { //NO GIRA SIEMPRE
             // Clear
             gl.clear(gl.COLOR_BUFFER_BIT);
-
-            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
-                document.addEventListener('wheel', function (event) {
-                    z = event.wheelDelta > 0 ? z - 0.1 : z + 0.1;  //con 0.01 se puede ver mejor el desplazamineto de la camara
-                });
 
             // sentencias
             var speed = document.getElementById("speed").value; //valor de 1, para que no este quieto
