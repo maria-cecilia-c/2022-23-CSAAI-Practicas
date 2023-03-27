@@ -42,7 +42,7 @@
         function init() {
             // Get canvas object from the DOM
             var canvas = document.getElementById("myCanvas");
-           
+
             // Init WebGL context
             gl = canvas.getContext("webgl");
             if (!gl) {
@@ -73,10 +73,7 @@
         }
 
         function initVertexShader(gl) {
-            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
-                document.addEventListener('wheel', function (event) {
-                    z = event.wheelDelta > 0 ? z - 0.1 : z + 0.1;  
-                });
+            
             // Vertexes and texture coordinates
             var vertexesAndTextures = [
                 	// Primera piŕamide
@@ -218,8 +215,11 @@
 		
         function initProjection(gl, canvas) {
             //PROJECTION
-            var z = 3;
-
+            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
+                document.addEventListener('wheel', function (event) {
+                    z = event.wheelDelta > 0 ? z - 0.01 : z + 0.01;  //con 0.01 se puede ver mejor el desplazamineto de la camara
+                });
+            
             document.onkeydown = function (ev) {
               var step = new Number(document.getElementById("step").value);
               switch (ev.keyCode) {
