@@ -70,12 +70,6 @@
 
             // Init textures
             initTexturesAndDraw(gl);
-
-
-            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
-                document.addEventListener('wheel', function (event) {
-                    z = event.wheelDelta > 0 ? z - 0.1 : z + 0.1;  
-                });
         }
 
         function initVertexShader(gl) {
@@ -213,6 +207,11 @@
             // Write indexes in gl.ELEMENT_ARRAY_BUFFER
             gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, gl.createBuffer());
             gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indexes), gl.STATIC_DRAW);
+
+            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
+                document.addEventListener('wheel', function (event) {
+                    z = event.wheelDelta > 0 ? z - 0.1 : z + 0.1;  
+                });
         }
 
 		function toRadian(g){
@@ -267,7 +266,7 @@
         }
 
         function initTexturesAndDraw(gl) {
-            //var luces = document.querySelector('input[name="christmas"]:checked').value;
+            var luces = document.querySelector('input[name="christmas"]:checked').value;
                 var image0 = new Image();
                 image0.src = 'tree.jpg';
                 var image1 = new Image();
