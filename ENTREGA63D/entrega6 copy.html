@@ -131,6 +131,12 @@
                 0.2, -0.92, 0.2,     1.0, 0.0, // 36
                 0.2, -0.92, -0.2,     1.0, 0.5,// 37
                 -0.2, -0.92, -0.2,    0.5, 0.5, // 38
+
+                //LATERAL tronco
+                -0.2, -0.5, 0.23,    1.0, 0.5,  // 39
+                0.2, -0.5, 0.23,     0.5, 0.5, // 40
+                -0.2, -0.9, 0.23,    1.0, 0.0, // 41
+                0.2, -0.9, 0.23,     0.5, 0.0, // 42
             ];
 
             // Indexes 96
@@ -169,7 +175,7 @@
                 //BASE TRONCO ABAJO
                 35,36,37,
                 35,38,37,
-                //
+                // laterales 
                 27,31,34,
                 27,30,34,
                 27,31,32,
@@ -179,6 +185,9 @@
                 29,33,32,
                 29,28,32,
                 29,30,34,
+                //lateral nuevo
+                39, 41,42,
+                39,40,42,
             ];
 
             // Write a_Position and a_TexCoord using gl.ARRAY_BUFFER
@@ -312,10 +321,10 @@
             initProjection(gl, canvas);
             // Draw gl.LINE_STRIP
             if (primitiveValue == "lines"){
-                gl.drawElements(gl.LINE_STRIP, 16 * 6, gl.UNSIGNED_SHORT, 0);
+                gl.drawElements(gl.LINE_STRIP, 17 * 6, gl.UNSIGNED_SHORT, 0);
             }
             else if (primitiveValue == "triangles"){
-                gl.drawElements(gl.TRIANGLES, 16 * 6, gl.UNSIGNED_SHORT, 0);
+                gl.drawElements(gl.TRIANGLES, 17 * 6, gl.UNSIGNED_SHORT, 0);
             }
             // Call drawScene again in the next browser repaint
             count += 0.01
