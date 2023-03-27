@@ -341,6 +341,7 @@
             var shader = gl.createShader(type);
             gl.shaderSource(shader, src);
             gl.compileShader(shader);
+            
             if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
                 alert("Error compiling shader: " + gl.getShaderInfoLog(shader));
                 return;
