@@ -215,28 +215,21 @@
 		
         function initProjection(gl, canvas) {
             //PROJECTION
-           
-
-            document.onkeydown = function (ev) {
-                var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
+            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
                 document.addEventListener('wheel', function (event) {
                     z = event.wheelDelta > 0 ? z - 0.1 : z + 0.1;  
                 });
 
-                
+            document.onkeydown = function (ev) {
               var step = new Number(document.getElementById("step").value);
               switch (ev.keyCode) {
-            
                   case 38: // Up 
                   y += step;
                   break;
-
                   case 40: // Down
                   y -= step;
                   break;
-                  
                 }
-               
             }
 
             var projectionValue = document.querySelector('input[name="projection"]:checked').value;
