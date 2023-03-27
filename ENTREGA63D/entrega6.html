@@ -62,10 +62,6 @@
             // Init projection matrix
             initProjection(gl, canvas);
 
-            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
-                document.addEventListener('wheel', function (event) {
-                    z = event.wheelDelta > 0 ? z - 0.1 : z + 0.1;  
-                });
             // Set clear canvas color
             gl.clearColor(0.0, 0.0, 0.0, 1.0);
 
@@ -74,6 +70,12 @@
 
             // Init textures
             initTexturesAndDraw(gl);
+
+
+            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
+                document.addEventListener('wheel', function (event) {
+                    z = event.wheelDelta > 0 ? z - 0.1 : z + 0.1;  
+                });
         }
 
         function initVertexShader(gl) {
