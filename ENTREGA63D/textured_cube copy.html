@@ -258,13 +258,12 @@
                     };
                     };
                 }  
-                else if (luces == "No"){
+                if (luces == "No"){
                     var image0 = new Image();
                     image0.src = 'tree.jpg';
-                
                     image0.onload = function () {
-                    loadTexture(gl, "u_Sampler0", image0, 0, true);
-                    drawScene(gl);
+                        loadTexture(gl, "u_Sampler0", image0, 0, true);
+                        drawScene(gl);
                     };
                 }
         }
