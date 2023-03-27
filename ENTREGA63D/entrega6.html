@@ -15,8 +15,8 @@
         uniform mat4 u_vMatrix;
         uniform mat4 u_mvMatrix;
         varying highp vec4 v_Color;
+        var luces = document.querySelector('input[name="christmas"]:checked').value;
         void main() {
-            var luces = document.querySelector('input[name="christmas"]:checked').value;
             if (luces == "Yes"){}
             gl_Position = u_pMatrix * u_vMatrix * u_mvMatrix * a_Position;
             v_TexCoord = a_TexCoord;
