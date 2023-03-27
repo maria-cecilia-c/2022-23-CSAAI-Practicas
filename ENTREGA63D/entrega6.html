@@ -58,6 +58,10 @@
             // Init vertex shader
             initVertexShader(gl);
 
+            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
+                document.addEventListener('wheel', function (event) {
+                    z = event.wheelDelta > 0 ? z - 0.1 : z + 0.1;  //con 0.01 se puede ver mejor el desplazamineto de la camara
+                });
             // Init projection matrix
             initProjection(gl, canvas);
 
@@ -72,6 +76,7 @@
         }
 
         function initVertexShader(gl) {
+            
             // Vertexes and texture coordinates
             var vertexesAndTextures = [
                 	// Primera piŕamide
@@ -213,10 +218,7 @@
 		
         function initProjection(gl, canvas) {
             //PROJECTION
-           var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
-                document.addEventListener('wheel', function (event) {
-                    z = event.wheelDelta > 0 ? z - 0.1 : z + 0.1;  //con 0.01 se puede ver mejor el desplazamineto de la camara
-                });
+           
 
             document.onkeydown = function (ev) {
               var step = new Number(document.getElementById("step").value);
@@ -273,7 +275,7 @@
                     loadTexture(gl, "u_Sampler1", image1, 1, true);
                     drawScene(gl);
                     };
-                    };
+                };
         }
 
         function loadTexture(gl, samplerUniform, image, unitNumber, flip) {
