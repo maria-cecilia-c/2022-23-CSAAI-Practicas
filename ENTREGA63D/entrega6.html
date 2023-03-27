@@ -218,6 +218,12 @@
            
 
             document.onkeydown = function (ev) {
+                var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
+                document.addEventListener('wheel', function (event) {
+                    z = event.wheelDelta > 0 ? z - 0.1 : z + 0.1;  
+                });
+
+                
               var step = new Number(document.getElementById("step").value);
               switch (ev.keyCode) {
             
@@ -294,10 +300,7 @@
             // Clear
             gl.clear(gl.COLOR_BUFFER_BIT);
             //
-            var vMatrixUniform = gl.getUniformLocation(gl.program, "u_vMatrix");
-                document.addEventListener('wheel', function (event) {
-                    z = event.wheelDelta > 0 ? z - 0.1 : z + 0.1;  
-                });
+            
             // sentencias
             var speed = document.getElementById("speed").value; //valor de 1, para que no este quieto
             var rotationChecked = document.querySelector('input[name="rotation"]:checked');
