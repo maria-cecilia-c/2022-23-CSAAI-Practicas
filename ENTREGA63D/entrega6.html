@@ -26,17 +26,16 @@
         uniform sampler2D u_Sampler0;
         uniform sampler2D u_Sampler1;
         varying vec2 v_TexCoord;
+        uniform luces;
         void main(void) {
             vec4 color0 = texture2D(u_Sampler0, v_TexCoord);
             vec4 color1 = texture2D(u_Sampler1, v_TexCoord);
-            var luces = document.querySelector('input[name="christmas"]:checked').value;
-            if (luces == "Yes"){
+            if (uniform == luces){
                 gl_FragColor = color0 * color1;
             }
-            else if (luces == "No") {
+            else {
                 gl_FragColor = color0;
             }
-           
     }
     </script>
 
@@ -299,8 +298,16 @@
         function drawScene() { //NO GIRA SIEMPRE
             // Clear
             gl.clear(gl.COLOR_BUFFER_BIT);
-            //
-            
+            //Linea nueva
+
+            var navidad = document.querySelector('input[name="christmas"]:checked').value;
+            var luces = gl.getUniformLocation(gl.program, "luces");
+            if (navidad == "Yes"){
+                gl.uniform1i(luces) = luces;
+            }
+            else if(navidad =="No"){
+                gl.uniform1i(luces) = no;
+            }
             // sentencias
             var speed = document.getElementById("speed").value; //valor de 1, para que no este quieto
             var rotationChecked = document.querySelector('input[name="rotation"]:checked');
