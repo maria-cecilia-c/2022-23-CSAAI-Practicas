@@ -31,10 +31,10 @@
             vec4 color0 = texture2D(u_Sampler0, v_TexCoord);
             vec4 color1 = texture2D(u_Sampler1, v_TexCoord);
             if (luces == 0){
-                gl_FragColor = color0;
+                gl_FragColor = color0 * color1;
             }
             else {
-                gl_FragColor = color0 * color1;
+                gl_FragColor = color0;
             }
     }
     </script>
