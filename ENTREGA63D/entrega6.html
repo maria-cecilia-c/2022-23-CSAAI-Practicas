@@ -69,14 +69,7 @@
             gl.enable(gl.DEPTH_TEST);
 
             // Init textures
-            var luces = document.querySelector('input[name="christmas"]:checked').value;
-            if (luces == "Yes"){
-                initTexturesAndDraw(gl);
-            }
-            else if (luces == "No"){
-                initTexturesAndDraw1(gl);
-            }
-            
+            initTexturesAndDraw(gl);
         }
 
         function initVertexShader(gl) {
@@ -273,7 +266,7 @@
         }
 
         function initTexturesAndDraw(gl) {
-          
+            var luces = document.querySelector('input[name="christmas"]:checked').value;
                 var image0 = new Image();
                 image0.src = 'tree.jpg';
                 var image1 = new Image();
@@ -284,15 +277,6 @@
                     loadTexture(gl, "u_Sampler1", image1, 1, true);
                     drawScene(gl);
                     };
-                };
-        }
-        function initTexturesAndDraw1(gl) {
-                var image0 = new Image();
-                image0.src = 'tree.jpg';
-                var image1 = new Image();
-                image1.src = 'light.jpg';
-                image0.onload = function () {
-                loadTexture(gl, "u_Sampler0", image0, 0, true);
                 };
         }
 
