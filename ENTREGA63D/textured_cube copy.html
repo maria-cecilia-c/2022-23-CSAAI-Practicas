@@ -245,25 +245,28 @@
 
         function initTexturesAndDraw(gl) {
             var luces = document.querySelector('input[name="christmas"]:checked').value;
-
-            var image0 = new Image();
-            image0.src = 'tree.jpg';
-            var image1 = new Image();
-            image1.src = 'light.jpg';
-            image0.onload = function () {
-            image1.onload = function () {
                 if (luces == "Yes"){
+                    var image0 = new Image();
+                    image0.src = 'tree.jpg';
+                    var image1 = new Image();
+                    image1.src = 'light.jpg';
+                    image0.onload = function () {
                     loadTexture(gl, "u_Sampler0", image0, 0, true);
-                    loadTexture(gl, "u_Sampler1", image1, 1, true);
-                   
-                }
+                    image1.onload = function () {
+                        loadTexture(gl, "u_Sampler1", image1, 1, true);
+                        drawScene(gl);
+                    };
+                    };
+                }  
                 else if (luces == "No"){
+                    var image0 = new Image();
+                    image0.src = 'tree.jpg';
+                
+                    image0.onload = function () {
                     loadTexture(gl, "u_Sampler0", image0, 0, true);
-                   
+                    drawScene(gl);
+                    };
                 }
-                drawScene(gl);
-            };
-            };
         }
 
         function loadTexture(gl, samplerUniform, image, unitNumber, flip) {
