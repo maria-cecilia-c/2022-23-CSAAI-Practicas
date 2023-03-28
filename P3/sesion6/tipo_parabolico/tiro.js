@@ -3,8 +3,8 @@ console.log("Ejecutando JS...");
 const canvas = document.getElementById("canvas");
 
 //-- Definir el tamaño del canvas
-canvas.width = 300;
-canvas.height = 100;
+canvas.width = 500;
+canvas.height = 200;
 
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
@@ -14,9 +14,10 @@ let x = 0;
 let y = 10;
 
 //-- Velocidades del objeto
-let velx = 5;
+let velx = 8;
 let vely = 1.2;
-
+let t = 0;
+let g = 9.8;
 //-- Función principal de animación
 function update() 
 {
@@ -33,16 +34,23 @@ function update()
   if(y + vely > (canvas.height-20) || y + vely < 0) {
       vely = -vely;
   }
-  //-- Actualizar la posición
-  x = x + velx;
-  y = y + vely;
 
+  if (canvas.height - y > canvas.height || x > canvas.width || x < 0) {
+    t = 0;
+  }
+  //-- Actualizar la posición
+  vx = velx * Math.cos(((60)* Math.PI) / 180); //Se calcula posición x del proyectil
+  vy =  vely * Math.sin(((60) * Math.PI) / 180) ; //Se calcula posición y del proyectil
+
+  x = x + vx * t;
+  y = y + vy * t - 0.5 * g * t * t;
+  t += 0.01;
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   //-- 3) Dibujar los elementos visibles
   ctx.beginPath();
-    ctx.rect(x, y, 20, 20);
+    ctx.rect(x, (canvas.height - 50) - y, 20, 20);
 
     //-- Dibujar
     ctx.fillStyle = 'red';
