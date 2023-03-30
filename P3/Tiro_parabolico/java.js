@@ -19,6 +19,13 @@ const angulo = document.getElementById("angulo");
 const velocidad = document.getElementById("velocidad");
 const iniciar = document.getElementById("iniciar");
 
+const gui = {
+  display : document.getElementById("display"),
+  start : document.getElementById("start"),
+  stop : document.getElementById("stop"),
+  reset : document.getElementById("reset")
+}
+const crono = new Crono(gui.display);
 //-----------------RANGOS---------------------
 range.oninput = () => {
     angulo.innerHTML = range.value;
@@ -133,6 +140,7 @@ function lanzar() {
 //-- Función de retrollamada del botón de disparo
 disparo.onclick = () => {
   lanzar();
+  crono.start();
 }
 
 iniciar.onclick = () => {
