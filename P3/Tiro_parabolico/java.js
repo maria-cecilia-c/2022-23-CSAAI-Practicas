@@ -113,7 +113,6 @@ dibujarO(xo,yo);
 dibujarP(xop, yop, 50, 50, "green"); // Pintar el proyectil
 
 
-//-- Función principal de actualización
 function lanzar() {
   //-- 1) Actualizar posición de los elementos
   xp = xp + velp*0.1;
@@ -132,7 +131,6 @@ function lanzar() {
 
   dibujarP(x, (canvas.height+293)-y, 50, 50, "green"); // Pintar el proyectil
  
-
   //-- 4) Repetir
   requestAnimationFrame(lanzar);
 }
