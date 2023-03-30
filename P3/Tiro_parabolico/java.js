@@ -129,13 +129,11 @@ function lanzar() {
   requestAnimationFrame(lanzar);
 }
 
-
-
 //-- Función de retrollamada del botón de disparo
 disparo.onclick = () => {
   lanzar();
 }
 
 iniciar.onclick = () => {
-  //lanzar();
+  location.reload();
 }
