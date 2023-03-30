@@ -29,13 +29,13 @@ range2.oninput = () => {
 }
 console.log(range2.value)
 //------- RANDOM--------------------
-function CrearNumSecreto() {
-  for (i = 0; i < 1; i++) { //0-9   
-      num1 = Math.floor(Math.random() * 590);
-  }
+
+function CrearNumSecreto(min, max) {
+  num1 = Math.random() * (max - min) + min;
 }
-CrearNumSecreto();
-console.log('NUMERO SECRETO', num1);
+CrearNumSecreto(121, 550);
+console.log('ñeñeñeñeñ ', num1);
+
 
 //-------Velocidad del proyectil----------------
 let velp = range2.value;
@@ -121,7 +121,6 @@ function lanzar() {
   y = yop + vy * t - 0.5 * g * t * t;
   t += 0.2;
 
-  console.log("velocidasd", xp)
   dibujarP(x, (canvas.height+293)-y, 50, 50, "green"); // Pintar el proyectil
  
 
