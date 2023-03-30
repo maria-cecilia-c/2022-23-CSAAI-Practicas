@@ -19,7 +19,7 @@ const angulo = document.getElementById("angulo");
 const velocidad = document.getElementById("velocidad");
 const iniciar = document.getElementById("iniciar");
 
-
+//-----------------RANGOS---------------------
 range.oninput = () => {
     angulo.innerHTML = range.value;
 }
@@ -28,6 +28,7 @@ range2.oninput = () => {
     velocidad.innerHTML = range2.value;
 }
 console.log(range2.value)
+console.log(range.value)
 //------- RANDOM--------------------
 
 function CrearNumSecreto(min, max) {
@@ -39,7 +40,7 @@ console.log('ñeñeñeñeñ ', num1);
 
 //-------Velocidad del proyectil----------------
 let velp = range2.value;
-
+let ang = range.value;
 
 //-- Coordenadas iniciales del proyectil
 let xop = 5;
@@ -115,8 +116,8 @@ function lanzar() {
   //-- 3) Pintar los elementos en el canvas
   dibujarO(xo,yo); // Pintar el objetivo
 
-  vx = (velp) * Math.cos(((60)* Math.PI) / 180); //Se calcula posición x del proyectil
-  vy =  (velp) * Math.sin(((60) * Math.PI) / 180) ; //Se calcula posición y del proyectil
+  vx = (velp) * Math.cos((ang* Math.PI) / 180); //Se calcula posición x del proyectil
+  vy =  (velp) * Math.sin((ang * Math.PI) / 180) ; //Se calcula posición y del proyectil
   x = xop + vx * t;
   y = yop + vy * t - 0.5 * g * t * t;
   t += 0.2;
