@@ -27,6 +27,7 @@ range.oninput = () => {
 range2.oninput = () => {
     velocidad.innerHTML = range2.value;
 }
+
 console.log(range2.value)
 console.log(range.value)
 //------- RANDOM--------------------
