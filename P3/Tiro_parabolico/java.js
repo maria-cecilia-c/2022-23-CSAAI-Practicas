@@ -17,6 +17,8 @@ const range = document.getElementById("range");
 const range2 = document.getElementById("range2");
 const angulo = document.getElementById("angulo");
 const velocidad = document.getElementById("velocidad");
+const iniciar = document.getElementById("iniciar");
+
 
 range.oninput = () => {
     angulo.innerHTML = range.value;
@@ -113,21 +115,27 @@ function lanzar() {
   //-- 3) Pintar los elementos en el canvas
   dibujarO(xo,yo); // Pintar el objetivo
 
-  vx = xp * Math.cos(((60)* Math.PI) / 180); //Se calcula posición x del proyectil
-  vy =  xp * Math.sin(((60) * Math.PI) / 180) ; //Se calcula posición y del proyectil
+  vx = (velp) * Math.cos(((60)* Math.PI) / 180); //Se calcula posición x del proyectil
+  vy =  (velp) * Math.sin(((60) * Math.PI) / 180) ; //Se calcula posición y del proyectil
   x = xop + vx * t;
   y = yop + vy * t - 0.5 * g * t * t;
-  t += 0.01;
+  t += 0.2;
 
   console.log("velocidasd", xp)
-  
-  dibujarP(x, (canvas.height)- y, 50, 50, "green"); // Pintar el proyectil
+  dibujarP(x, (canvas.height+293)-y, 50, 50, "green"); // Pintar el proyectil
  
+
   //-- 4) Repetir
   requestAnimationFrame(lanzar);
 }
 
+
+
 //-- Función de retrollamada del botón de disparo
 disparo.onclick = () => {
   lanzar();
+}
+
+iniciar.onclick = () => {
+  //lanzar();
 }
