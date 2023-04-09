@@ -4,14 +4,13 @@ const canvas = document.getElementById("canvas");
 const disparo = document.getElementById("disparo");
 
 //-- Definir el tamaño del canvas
-canvas.width = 600;
+canvas.width = 870;
 canvas.height = 400;
 
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
 var velp = 0;
 var ang = 0;
-//-- Velocidad horizontal del objeto
 
 //-------------------DESLIZADORES------------------------------------
 const range = document.getElementById("range");
@@ -48,9 +47,6 @@ range2.onchange = () => {
 function CrearNumSecreto(min, max) {
   num1 = Math.random() * (max - min) + min;
 }
-CrearNumSecreto(121, 550);
-console.log('ñeñeñeñeñ ', num1);
-
 
 //-- Coordenadas iniciales del proyectil
 let xop = 5;
@@ -60,6 +56,7 @@ let yp = yop;
 //-- Coordenadas iniciales del objetivo
 let xomin = 200;
 let xomax = 770;
+CrearNumSecreto(xomin, xomax);
 let xo = num1; //getRandomXO(xomin,xomax);
 let yo = 370;
 //tiro parabolico
