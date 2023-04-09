@@ -121,6 +121,7 @@ dibujarP(xop, yop, 50, 50, "green"); // Pintar el proyectil
 
 
 function lanzar() {
+  
   //-- 1) Actualizar posición de los elementos
   xp = xp + velp*0.1;
 
@@ -137,11 +138,26 @@ function lanzar() {
   t += 0.2;
 
   dibujarP(x, (canvas.height+293)-y, 50, 50, "green"); // Pintar el proyectil
- 
+ //
+ Colision();
   //-- 4) Repetir
   requestAnimationFrame(lanzar);
 }
 
+//------------------------------------------------
+//Detecto colisiones con la base o los asteroides
+function Colision(){
+  if (y < 300){
+    alert("perdiste wacho");
+    location.reload();
+  }
+  if (xp + 50 > xo && xp < xo + 25 && yp + 50 > yo && yp < yo+25){
+    console.log("colisioonesrt")
+    alert("Ganaste wacho, felicidades");
+    location.reload();
+  }
+
+}
 //-- Función de retrollamada del botón de disparo
 disparo.onclick = () => {
   lanzar();
@@ -151,3 +167,5 @@ disparo.onclick = () => {
 iniciar.onclick = () => {
   location.reload();
 }
+
+//HACER EL TOPE PARA EL SUELO 
