@@ -9,7 +9,8 @@ canvas.height = 400;
 
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
-
+var velp = 0;
+var ang = 0;
 //-- Velocidad horizontal del objeto
 
 //-------------------DESLIZADORES------------------------------------
@@ -34,18 +35,14 @@ const crono = new Crono(gui.display);
 range.onchange = () => {
   range_angulo.innerHTML = range.value;
   console.log(range.value)
+  ang = range.value;
 }
 
 range2.onchange = () => {
   range_velocidad.innerHTML = range2.value;
   console.log(range2.value)
-  
+  velp = range2.value;
 }
-//-------Velocidad del proyectil----------------
-let velp = range2.value;
-console.log(velp)
-let ang = range.value;
-
 //------- RANDOM--------------------
 
 function CrearNumSecreto(min, max) {
@@ -53,8 +50,6 @@ function CrearNumSecreto(min, max) {
 }
 CrearNumSecreto(121, 550);
 console.log('ñeñeñeñeñ ', num1);
-
-
 
 
 //-- Coordenadas iniciales del proyectil
@@ -139,21 +134,21 @@ function lanzar() {
 
   dibujarP(x, (canvas.height+293)-y, 50, 50, "green"); // Pintar el proyectil
  //
- Colision();
+  Colision(x,xo,y,yo);
   //-- 4) Repetir
   requestAnimationFrame(lanzar);
 }
 
 //------------------------------------------------
 //Detecto colisiones con la base o los asteroides
-function Colision(){
+function Colision(xp,xo,yp,yo){
   if (y < 300){
-    alert("perdiste wacho");
+    alert("perdiste ");
     location.reload();
   }
-  if (xp + 50 > xo && xp < xo + 25 && yp + 50 > yo && yp < yo+25){
+  else if (xp +50 > xo && xp < xo + 40 && yp + 50 > yo && yp < yo + 40){
     console.log("colisioonesrt")
-    alert("Ganaste wacho, felicidades");
+    alert("Ganaste , felicidades");
     location.reload();
   }
 
