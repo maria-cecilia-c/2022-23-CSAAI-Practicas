@@ -18,6 +18,8 @@ const range2 = document.getElementById("range2");
 const angulo = document.getElementById("angulo");
 const velocidad = document.getElementById("velocidad");
 const iniciar = document.getElementById("iniciar");
+const range_velocidad = document.getElementById("range_velocidad");
+const range_angulo = document.getElementById("range_angulo");
 
 const gui = {
   display : document.getElementById("display"),
@@ -26,17 +28,24 @@ const gui = {
   reset : document.getElementById("reset")
 }
 const crono = new Crono(gui.display);
+
 //-----------------RANGOS---------------------
-range.oninput = () => {
-    angulo.innerHTML = range.value;
+
+range.onchange = () => {
+  range_angulo.innerHTML = range.value;
+  console.log(range.value)
 }
 
-range2.oninput = () => {
-    velocidad.innerHTML = range2.value;
+range2.onchange = () => {
+  range_velocidad.innerHTML = range2.value;
+  console.log(range2.value)
+  
 }
+//-------Velocidad del proyectil----------------
+let velp = range2.value;
+console.log(velp)
+let ang = range.value;
 
-console.log(range2.value)
-console.log(range.value)
 //------- RANDOM--------------------
 
 function CrearNumSecreto(min, max) {
@@ -46,9 +55,7 @@ CrearNumSecreto(121, 550);
 console.log('ñeñeñeñeñ ', num1);
 
 
-//-------Velocidad del proyectil----------------
-let velp = range2.value;
-let ang = range.value;
+
 
 //-- Coordenadas iniciales del proyectil
 let xop = 5;
