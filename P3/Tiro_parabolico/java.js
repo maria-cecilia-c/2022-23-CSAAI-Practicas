@@ -141,6 +141,8 @@ function Colision(xp,xo,yp,yo){
     alert("perdiste ");
     audio.play();
     location.reload();
+    dibujarO(xo,yo); 
+    dibujarP(xop, yop, 50, 50, "green"); 
   }
   if (xp +50 > xo && xp < xo + 40 && yp + 50 > yo && yp < yo + 40){
     console.log("colisioonesrt")
@@ -148,6 +150,7 @@ function Colision(xp,xo,yp,yo){
     location.reload();
     dibujarO(xo,yo); 
     dibujarP(xop, yop, 50, 50, "green"); 
+   
   }
 
 }
@@ -159,4 +162,6 @@ disparo.onclick = () => {
 
 iniciar.onclick = () => {
   location.reload();
+  dibujarO(xo,yo); 
+  dibujarP(xop, yop, 50, 50, "green"); 
 }
