@@ -139,8 +139,10 @@ function lanzar() {
 function Colision(xp,xo,yp,yo){
   if (y < 250){
     audio.play();
-    alert("perdiste ");
-    location.reload();
+    var resultado = window.confirm('Perdiste, dale a iniciar');
+    if (resultado === true) {
+      location.reload();
+    } 
     dibujarO(xo,yo); 
     dibujarP(xop, yop, 50, 50, "green"); 
   }
