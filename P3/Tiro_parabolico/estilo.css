@@ -13,3 +13,9 @@ canvas {
   #fondo {
     display: none;
   }
+  #objetivo {
+    display: none;
+  }
+  #caparazon {
+    display: none;
+  }

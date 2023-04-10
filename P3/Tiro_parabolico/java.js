@@ -28,7 +28,9 @@ const gui = {
   reset : document.getElementById("reset")
 }
 const crono = new Crono(gui.display);
-
+//----------------IMAGENES------------------
+var obj = document.getElementById("objetivo");
+var caparazon = document.getElementById("caparazon");
 //-----------------RANGOS---------------------
 
 range.onchange = () => {
@@ -63,15 +65,14 @@ let yo = 370;
 let g = 9.8; //Aceleración de gravedad
 let t = 0; //Se inicia el tiempo a t = 0
 
-//pintar el proyectil
+//------------pintar el proyectil--------------------
 function dibujarP(x,y,lx,ly,color) {
 
   //-- Pintando el proyectil
   ctx.beginPath();
 
-  //-- Definir un rectángulo de dimensiones lx x ly,
-  ctx.rect(x, y, lx, ly);
-
+  ctx.drawImage(caparazon,x,y-20,80,80);
+  
   //-- Color de relleno del rectángulo
   ctx.fillStyle = color;
 
@@ -91,11 +92,7 @@ function dibujarO(x,y) {
 
   //-- Dibujar un circulo: coordenadas x,y del centro
   //-- Radio, Angulo inicial y angulo final
-  ctx.arc(x, y, 25, 0, 2 * Math.PI);
-  ctx.strokeStyle = 'blue';
-  ctx.lineWidth = 2;
-  ctx.fillStyle = 'red';
-
+  ctx.drawImage(obj,x,y-40,80,80);
   //-- Dibujar el relleno
   ctx.fill()    
 
@@ -104,7 +101,6 @@ function dibujarO(x,y) {
 
   ctx.closePath();
 }
-
 
 //-- Dibujar el objetivo
 dibujarO(xo,yo); 
@@ -132,6 +128,7 @@ function lanzar() {
   dibujarP(x, (canvas.height+293)-y, 50, 50, "green"); // Pintar el proyectil
  //
   Colision(x,xo,y,yo);
+
   //-- 4) Repetir
   requestAnimationFrame(lanzar);
 }
