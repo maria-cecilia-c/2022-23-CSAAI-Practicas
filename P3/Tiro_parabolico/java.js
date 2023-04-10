@@ -31,8 +31,10 @@ const crono = new Crono(gui.display);
 //----------------IMAGENES------------------
 var obj = document.getElementById("objetivo");
 var caparazon = document.getElementById("caparazon");
+//-----------------SONIDOS--------------------
+const audio = new Audio("lose.mp4");
+audio.play();
 //-----------------RANGOS---------------------
-
 range.onchange = () => {
   range_angulo.innerHTML = range.value;
   console.log(range.value)
