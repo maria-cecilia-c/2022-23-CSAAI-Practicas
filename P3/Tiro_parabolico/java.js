@@ -137,7 +137,7 @@ function lanzar() {
 //------------------------------------------------
 //Detecto colisiones con la base o los asteroides
 function Colision(xp,xo,yp,yo){
-  if (y < 310){
+  if (y < 250){
     alert("perdiste ");
     audio.play();
     location.reload();
