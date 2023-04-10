@@ -138,19 +138,17 @@ function lanzar() {
 //Detecto colisiones con la base o los asteroides
 function Colision(xp,xo,yp,yo){
   if (y < 250){
-    alert("perdiste ");
     audio.play();
+    alert("perdiste ");
     location.reload();
     dibujarO(xo,yo); 
     dibujarP(xop, yop, 50, 50, "green"); 
   }
   if (xp +50 > xo && xp < xo + 40 && yp + 50 > yo && yp < yo + 40){
-    console.log("colisioonesrt")
     alert("Ganaste , felicidades");
     location.reload();
     dibujarO(xo,yo); 
     dibujarP(xop, yop, 50, 50, "green"); 
-   
   }
 
 }
