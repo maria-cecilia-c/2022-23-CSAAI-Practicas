@@ -33,7 +33,7 @@ var obj = document.getElementById("objetivo");
 var caparazon = document.getElementById("caparazon");
 //-----------------SONIDOS--------------------
 const audio = new Audio("lose.mp4");
-const audio2 = new Audio("ganar.mp4");
+const audio2 = new Audio("ganar.mp3");
 //-----------------RANGOS---------------------
 range.onchange = () => {
   range_angulo.innerHTML = range.value;
