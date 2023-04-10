@@ -156,7 +156,7 @@ disparo.onclick = () => {
 }
 
 iniciar.onclick = () => {
-  location.reload();
   dibujarO(xo,yo); 
   dibujarP(xop, yop, 50, 50, "green"); 
+  location.reload();
 }
