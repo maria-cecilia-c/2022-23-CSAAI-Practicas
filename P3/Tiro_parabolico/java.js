@@ -33,7 +33,7 @@ var obj = document.getElementById("objetivo");
 var caparazon = document.getElementById("caparazon");
 //-----------------SONIDOS--------------------
 const audio = new Audio("lose.mp4");
-
+const audio2 = new Audio("ganar.mp4");
 //-----------------RANGOS---------------------
 range.onchange = () => {
   range_angulo.innerHTML = range.value;
@@ -147,6 +147,7 @@ function Colision(xp,xo,yp,yo){
   }
   if (xp +50 > xo && xp < xo + 40 && yp + 50 > yo && yp < yo + 40){
     crono.stop();
+    audio2.play();
     alert("Ganaste , felicidades, dale a iniciar");
     alert.stop();
     dibujarO(xo,yo); 
