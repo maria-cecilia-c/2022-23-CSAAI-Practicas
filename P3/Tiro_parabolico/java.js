@@ -146,6 +146,8 @@ function Colision(xp,xo,yp,yo){
     console.log("colisioonesrt")
     alert("Ganaste , felicidades");
     location.reload();
+    dibujarO(xo,yo); 
+    dibujarP(xop, yop, 50, 50, "green"); 
   }
 
 }
@@ -156,7 +158,5 @@ disparo.onclick = () => {
 }
 
 iniciar.onclick = () => {
-  dibujarO(xo,yo); 
-  dibujarP(xop, yop, 50, 50, "green"); 
   location.reload();
 }
