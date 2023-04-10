@@ -139,15 +139,16 @@ function lanzar() {
 function Colision(xp,xo,yp,yo){
   if (y < 250){
     audio.play();
+    crono.stop();
     alert("perdiste , dale a iniciar");
     alert.stop();
-    crono.stop();
     dibujarO(xo,yo); 
     dibujarP(xop, yop, 50, 50, "green"); 
   }
   if (xp +50 > xo && xp < xo + 40 && yp + 50 > yo && yp < yo + 40){
-    alert("Ganaste , felicidades");
-    location.reload();
+    crono.stop();
+    alert("Ganaste , felicidades, dale a iniciar");
+    alert.stop();
     dibujarO(xo,yo); 
     dibujarP(xop, yop, 50, 50, "green"); 
   }
