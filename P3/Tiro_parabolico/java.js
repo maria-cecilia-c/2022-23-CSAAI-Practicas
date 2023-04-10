@@ -130,7 +130,6 @@ function lanzar() {
   dibujarP(x, (canvas.height+293)-y, 50, 50, "green"); // Pintar el proyectil
  //
   Colision(x,xo,y,yo);
-
   //-- 4) Repetir
   requestAnimationFrame(lanzar);
 }
@@ -138,12 +137,12 @@ function lanzar() {
 //------------------------------------------------
 //Detecto colisiones con la base o los asteroides
 function Colision(xp,xo,yp,yo){
-  if (y < 300){
+  if (y < 310){
     alert("perdiste ");
     audio.play();
     location.reload();
   }
-  else if (xp +50 > xo && xp < xo + 40 && yp + 50 > yo && yp < yo + 40){
+  if (xp +50 > xo && xp < xo + 40 && yp + 50 > yo && yp < yo + 40){
     console.log("colisioonesrt")
     alert("Ganaste , felicidades");
     location.reload();
@@ -158,6 +157,6 @@ disparo.onclick = () => {
 
 iniciar.onclick = () => {
   location.reload();
+  dibujarO(xo,yo); 
+  dibujarP(xop, yop, 50, 50, "green"); 
 }
-
-//HACER EL TOPE PARA EL SUELO 
