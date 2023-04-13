@@ -2,16 +2,21 @@
 // BOTON DE REINICIO 
 // ELEGIR LAS DIMENSIONES DEL TABLERO
 //PONERLO BONITO 
-
+//sleectro quecambi valor 
+//dimen
 const selectors = {
     gridContainer: document.querySelector('.grid-container'),
     tablero: document.querySelector('.tablero'),
     movimientos: document.querySelector('.movimientos'),
     timer: document.querySelector('.timer'),
     comenzar: document.querySelector('button'),
+    //reiniciar 
+    reiniciar: document.querySelector('#reiniciarbutton'),
+    dimen: document.querySelector('.NumDimensiones'),
     win: document.querySelector('.win')
 }
 
+//variable de estado
 const state = {
     gameStarted: false,
     flippedCards: 0,
@@ -20,10 +25,13 @@ const state = {
     loop: null
 }
 
+//-----------------------
+var img = document.getElementsByClassName("imagenes"); 
+//-----------------------
+
 
 const generateGame = () => {
     const dimensions = selectors.tablero.getAttribute('grid-dimension')
-
     //-- Nos aseguramos de que el número de dimensiones es par
     // y si es impar lanzamos un error
     if (dimensions % 2 !== 0) {
@@ -31,7 +39,20 @@ const generateGame = () => {
     }
 
     //-- Creamos un array con los emojis que vamos a utilizar en nuestro juego
-    const emojis = ['🥔', '🍒', '🥑', '🌽', '🥕', '🍇', '🍉', '🍌', '🥭', '🍍']
+    
+    //
+    var emojis = new Array(
+        new Array("lillymon.jpg", 1),
+        new Array("lillymon.jpg", 2),
+        new Array("lillymon.jpg", 3), 
+        new Array("lillymon.jpg", 1),
+        new Array("lillymon.jpg", 2),
+        new Array("lillymon.jpg", 3),
+        new Array("lillymon.jpg", 1),
+        new Array("lillymon.jpg", 2),
+        new Array("lillymon.jpg", 3)
+       );
+    //
     
     //-- Elegimos un subconjunto de emojis al azar, así cada vez que comienza el juego
     // es diferente.
@@ -119,7 +140,7 @@ const attachEventListeners = () => {
             flipCard(eventParent)
         // Pero si lo que ha pasado es un clic en el botón de comenzar lo que hacemos es
         // empezar el juego
-        } else if (eventTarget.nodeName === 'BUTTON' && !eventTarget.className.includes('disabled')) {
+        } else if (eventTarget.nodeName === 'BUTTON' && !eventTarget.className.includes('disabled')) {  //deberemos cambiar el button ese supongo
             startGame()
         }
     })
@@ -133,6 +154,7 @@ attachEventListeners()
 
 
 const startGame = () => {
+    
     // Iniciamos el estado de juego
     state.gameStarted = true
     // Desactivamos el botón de comenzar
@@ -176,8 +198,9 @@ const flipBackCards = () => {
                 </span>
             `
             // Paramos el loop porque el juego ha terminado
-            clearInterval(state.loop)
+            clearInterval(state.loop)  //setInterval para empezar
         }, 1000)
+
     }
 
 
@@ -240,3 +263,5 @@ const flipBackCards = () => {
             }, 1000)
         }
     }
+
+    //cuando le demos al boton de reiniciar generateGame()

@@ -13,15 +13,22 @@
         <div class="game">
             <div class="controles">
                 <button>Comenzar</button>
+                <button id="reiniciarbutton">Reiniciar</button>
                 <div class="display">
                     <div class="movimientos">0 movimientos</div>
                     <div class="timer">tiempo: 0 sec</div>
                 </div>
             </div>
             <div class="grid-container">
-                <div class="tablero" grid-dimension="4"></div>
+                <p>Dimensiones <input type="range" id="range2" min="2" step="2" max="10"> <span id="velocidad"></span>  
+                    Valor final: <span id="range_velocidad"></span>
+                </p>
+                <div class="tablero" grid-dimension="4">
+                    <div class="imagenes"><img src="lillymon.jpg"></div>
+                </div> 
                 <div class="win">¡Has Ganado!</div>
             </div>
+            
 
           
         </div>
