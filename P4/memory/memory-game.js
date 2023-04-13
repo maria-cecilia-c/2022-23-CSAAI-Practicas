@@ -40,17 +40,19 @@ const generateGame = () => {
 
     //-- Creamos un array con los emojis que vamos a utilizar en nuestro juego
     
-    //
+    // cosnt imegenes = ['logourjc.png']
+    //html cambia
+    //en el javascrit, lo naranja cambia el item
     var emojis = new Array(
+        new Array(img.src ="lillymon.jpg", 1),
+        new Array("agumon.webp", 2),
+        new Array("agumon.webp", 3), 
         new Array("lillymon.jpg", 1),
-        new Array("lillymon.jpg", 2),
-        new Array("lillymon.jpg", 3), 
-        new Array("lillymon.jpg", 1),
-        new Array("lillymon.jpg", 2),
-        new Array("lillymon.jpg", 3),
-        new Array("lillymon.jpg", 1),
-        new Array("lillymon.jpg", 2),
-        new Array("lillymon.jpg", 3)
+        //new Array("lillymon.jpg", 2),
+        //new Array("lillymon.jpg", 3),
+        //new Array("lillymon.jpg", 1),
+        //new Array("lillymon.jpg", 2),
+        //new Array("lillymon.jpg", 3) PILLA EL PRIMERO 
        );
     //
     
@@ -71,7 +73,7 @@ const generateGame = () => {
             ${items.map(item => `
                 <div class="card">
                     <div class="card-front"></div>
-                    <div class="card-back">${item}</div>
+                    <div class="card-back"><img src="agumon.webp"> <img src="agumon.webp"> <img src="angewomon.webp"></div>
                 </div>
             `).join('')}
        </div>
