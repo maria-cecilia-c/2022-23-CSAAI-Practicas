@@ -1,10 +1,10 @@
 @font-face {
     font-family: Montserrat;
-    src: url(./Montserrat-Medium.ttf);
+    src: url(./Montserrat-Regular.ttf);
 }
 
 html {
-    background-image: url(fondoOrdenador.jpeg);
+    background-color: #8eccff;
     background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
@@ -136,3 +136,30 @@ button {
 .highlight {
     color: #6f00fc;
 }
+.range2{
+    height: 20px;
+    width: 100%;
+    background-color: #f1f1f1;
+    border-radius: 50px;
+    }
+    .range2::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background-color: #61ffbd;
+    border-radius: 50%;
+    border: 0;
+}
+
+input[type="range"]::-moz-range-progress {
+    background-color: #43e5f7; 
+  }
+  input[type="range"]::-moz-range-track {  
+    background-color: #9a905d;
+  }
+  /* IE*/
+  input[type="range"]::-ms-fill-lower {
+    background-color: #43e5f7; 
+  }
+  input[type="range"]::-ms-fill-upper {  
+    background-color: #9a905d;
+  }
