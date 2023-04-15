@@ -9,9 +9,7 @@ const selectors = {
     tablero: document.querySelector('.tablero'),
     movimientos: document.querySelector('.movimientos'),
     timer: document.querySelector('.timer'),
-    comenzar: document.querySelector('button'),
-    //reiniciar 
-    reiniciar: document.querySelector('#reiniciarbutton'),
+    comenzar: document.querySelector('.bt2'),
     dimen: document.querySelector('.NumDimensiones'),
     win: document.querySelector('.win')
 }
@@ -26,12 +24,22 @@ const state = {
 }
 
 //-----------------------
-var img = document.getElementsByClassName("imagenes"); 
+var img = document.getElementsByClassName("imagenes");
+const range = document.getElementById("range");
+const velocidad = document.getElementById("velocidad");
+const range_velocidad = document.getElementById("range_velocidad");
+
+range2.onchange = () => {
+    range_velocidad.innerHTML = range2.value;
+    console.log(range2.value)
+    velp = range2.value;
+  }
 //-----------------------
 
+//---------------------
 
 const generateGame = () => {
-    const dimensions = selectors.tablero.getAttribute('grid-dimension')
+    var dimensions = range2.value;
     //-- Nos aseguramos de que el número de dimensiones es par
     // y si es impar lanzamos un error
     if (dimensions % 2 !== 0) {
@@ -43,17 +51,8 @@ const generateGame = () => {
     // cosnt imegenes = ['logourjc.png']
     //html cambia
     //en el javascrit, lo naranja cambia el item
-    var emojis = new Array(
-        new Array(img.src ="lillymon.jpg", 1),
-        new Array("agumon.webp", 2),
-        new Array("agumon.webp", 3), 
-        new Array("lillymon.jpg", 1),
-        //new Array("lillymon.jpg", 2),
-        //new Array("lillymon.jpg", 3),
-        //new Array("lillymon.jpg", 1),
-        //new Array("lillymon.jpg", 2),
-        //new Array("lillymon.jpg", 3) PILLA EL PRIMERO 
-       );
+    const emojis = ['🃅','🃆','🃇','🃈','🃉','🃊','🃋','🃌','🃍','🃎','🃁','🃂','🃃','🃄','🃏','🃟','♦','♥']
+       
     //
     
     //-- Elegimos un subconjunto de emojis al azar, así cada vez que comienza el juego
@@ -71,10 +70,10 @@ const generateGame = () => {
     const cards = `
         <div class="tablero" style="grid-template-columns: repeat(${dimensions}, auto)">
             ${items.map(item => `
-                <div class="card">
-                    <div class="card-front"></div>
-                    <div class="card-back"><img src="agumon.webp"> <img src="agumon.webp"> <img src="angewomon.webp"></div>
-                </div>
+            <div class="card">
+            <div class="card-front"></div>
+            <div class="card-back">${item}</div>
+        </div>
             `).join('')}
        </div>
     `
@@ -142,8 +141,10 @@ const attachEventListeners = () => {
             flipCard(eventParent)
         // Pero si lo que ha pasado es un clic en el botón de comenzar lo que hacemos es
         // empezar el juego
-        } else if (eventTarget.nodeName === 'BUTTON' && !eventTarget.className.includes('disabled')) {  //deberemos cambiar el button ese supongo
+        } else if (eventTarget.className.includes('bt2') && !eventTarget.className.includes('disabled')) {  //deberemos cambiar el button ese supongo
             startGame()
+        } else if (eventTarget.className.includes('bt1') && !eventTarget.className.includes('disabled')) {  //deberemos cambiar el button ese supongo
+            location.reload()
         }
     })
 }
@@ -199,6 +200,9 @@ const flipBackCards = () => {
                     en un tiempo de <span class="highlight">${state.totalTime}</span> segundos
                 </span>
             `
+            crono.stop();
+
+
             // Paramos el loop porque el juego ha terminado
             clearInterval(state.loop)  //setInterval para empezar
         }, 1000)

@@ -11,26 +11,31 @@
     </head>
     <body>
         <div class="game">
+            
             <div class="controles">
-                <button>Comenzar</button>
-                <button id="reiniciarbutton">Reiniciar</button>
+                <button class = "bt2">Comenzar</button>
+                <button class="bt1">Reiniciar</button>
+
+
                 <div class="display">
                     <div class="movimientos">0 movimientos</div>
                     <div class="timer">tiempo: 0 sec</div>
                 </div>
             </div>
             <div class="grid-container">
-                <p>Dimensiones <input type="range" id="range2" min="2" step="2" max="10"> <span id="velocidad"></span>  
+
+                <p>Eleccion dimensiones del tablero</p>
+                <p>Dimension:  <input type="range" id="range2"  min="2" step="2" max="6"> <span id="velocidad"></span>  
                     Valor final: <span id="range_velocidad"></span>
                 </p>
+
                 <div class="tablero" grid-dimension="4">
-                    <div class="imagenes">
-                        <img src="lillymon.jpg">
-                        <img src="agumon.webp">
-                        <img src="weregarurumon.jpg">
-                        <img src="angewomon.webp">
+                    <div class="card">
+                        <div class="card-front"></div>
+                        <div class="card-back"></div>
                     </div>
-                </div> 
+                </div>
+
                 <div class="win">¡Has Ganado!</div>
             </div>
             
