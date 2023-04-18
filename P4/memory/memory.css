@@ -18,15 +18,15 @@ html {
     background-color:#fca8f1e5;
     padding: 3%;
     padding-bottom: 4%;
+    padding-top: 1%;
     position: absolute;
-    top: 55%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 
 .controls {
-  
     display: flex;
     gap: 20px;
     margin-bottom: 20px;
