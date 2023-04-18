@@ -36,13 +36,15 @@ range2.onchange = () => {
     range_dimen.innerHTML = range2.value;
     console.log(range2.value);
     var dimensions = range2.value;
-    generateGame();
-  }
+    console.log('generamos el juego con dssim:',dimensions);
+    generateGame(dimensions);
+} 
+
 //---------------------
 
-const generateGame = () => {
+const generateGame = (dim) => {
+    var dimensions = dim;
     console.log('generamos el juego con dim:',dimensions);
-    var dimensions = range2.value;
     //-- Nos aseguramos de que el número de dimensiones es par
     // y si es impar lanzamos un error
     if (dimensions % 2 !== 0) {
@@ -152,8 +154,7 @@ const attachEventListeners = () => {
     })
 }
 
-// Generamos el juego
-generateGame()
+
 
 // Asignamos las funciones de callback para determinados eventos
 attachEventListeners()
