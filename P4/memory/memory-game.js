@@ -32,6 +32,7 @@ const range_dimen = document.getElementById("range_dimen");
 const barra = document.getElementById('range2').disabled = false;
 
 var dimensions = 0;
+range_dimen.innerHTML=0;
 range2.onchange = () => {
     range_dimen.innerHTML = range2.value;
     console.log(range2.value);
