@@ -11,7 +11,8 @@ const selectors = {
     timer: document.querySelector('.timer'),
     comenzar: document.querySelector('.bt2'),
     dimen: document.querySelector('.NumDimensiones'),
-    win: document.querySelector('.win')
+    win: document.querySelector('.win'),
+    
 }
 
 //variable de estado
@@ -25,20 +26,22 @@ const state = {
 
 //-----------------------
 var img = document.getElementsByClassName("imagenes");
-const range = document.getElementById("range");
-const velocidad = document.getElementById("velocidad");
-const range_velocidad = document.getElementById("range_velocidad");
+const range2 = document.getElementById("range2");
+const dimen = document.getElementById("dimen");
+const range_dimen = document.getElementById("range_dimen");
+const barra = document.getElementById('range2').disabled = false;
+
 
 range2.onchange = () => {
-    range_velocidad.innerHTML = range2.value;
-    console.log(range2.value)
-    velp = range2.value;
+    range_dimen.innerHTML = range2.value;
+    console.log(range2.value);
+    var dimensions = range2.value;
+    generateGame();
   }
-//-----------------------
-
 //---------------------
 
 const generateGame = () => {
+    console.log('generamos el juego con dim:',dimensions);
     var dimensions = range2.value;
     //-- Nos aseguramos de que el número de dimensiones es par
     // y si es impar lanzamos un error
@@ -51,7 +54,7 @@ const generateGame = () => {
     // cosnt imegenes = ['logourjc.png']
     //html cambia
     //en el javascrit, lo naranja cambia el item
-    const emojis = ['🃅','🃆','🃇','🃈','🃉','🃊','🃋','🃌','🃍','🃎','🃁','🃂','🃃','🃄','🃏','🃟','♦','♥']
+    const emojis = ['🃅','🃆','🃇','🃈','🃉','🃊','🃋','🃌','🃍','🃎','🃁','🃂','🃃','🐸','🌈','🌼','🌸','♥']
        
     //
     
@@ -162,6 +165,8 @@ const startGame = () => {
     state.gameStarted = true
     // Desactivamos el botón de comenzar
     selectors.comenzar.classList.add('disabled')
+    
+    const barra = document.getElementById('range2').disabled = true;
 
     // Comenzamos el bucle de juego
     // Cada segundo vamos actualizando el display de tiempo transcurrido
