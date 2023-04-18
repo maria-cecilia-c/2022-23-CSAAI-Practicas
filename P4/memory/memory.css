@@ -179,7 +179,7 @@ input[type="range"]::-moz-range-progress {
 
 
   @media screen and (max-width: 600px ) {
-    .game{
+    .html{
         width: 150%;
         height: 100%;
     }
