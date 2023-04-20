@@ -17,7 +17,7 @@ html {
 .game {
     display: grid;
     place-content: center;
-    background-color:#fca8f1e5;
+    /*background-color:#fca8f1e5;*/
     padding: 3%;
     padding-bottom: 4%;
     padding-top: 1%;
