@@ -44,13 +44,13 @@ deslizador.oninput = () => {
 
   //-- Obtener el array con todos los píxeles
   let data = imgData.data
-
+  let data2 = imgData.data
   //-- Obtener el umbral de rojo del deslizador
   umbral = deslizador.value
 
   //-- Filtrar la imagen según el nuevo umbral
   for (let i = 0; i < data.length; i+=4) {
-    if (data[i] > umbral) //< capa de color rojo
+    if (data[i] > umbral ) //< capa de color
       data[i] = umbral;
   }
 

@@ -184,10 +184,13 @@ input[type="range"]::-moz-range-progress {
        /* align-items: center;*/
     }
     .game{
+        background-color:#fca8f1e5;
+        background-size: 100%;
         width: 100%;
         height: 100%;
         place-content: center;
-        padding-top: 30%;
+        padding-top: 20%;
+        padding-bottom: 80%;
        /* align-items: center;*/
     }
     .tablero{
