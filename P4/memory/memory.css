@@ -135,7 +135,7 @@ button:hover {
     background: #cfc2ff;
     background-image: url('kero.png');
     background-repeat: no-repeat;
-    transform: rotateY(180deg) rotateZ(50deg);
+    transform: rotateY(180deg) rotateZ(10deg);
 }
 
 .win-text {
@@ -176,9 +176,6 @@ input[type="range"]::-moz-range-progress {
 
 
   @media screen and (max-width: 600px) {
-    html{
-        width: 100%;
-    }
     .game{
         margin-top: 40%;
         width: 100%;
@@ -186,7 +183,6 @@ input[type="range"]::-moz-range-progress {
         place-content: center;
         padding-top: 20%;
         padding-bottom: 80%;
-       /* align-items: center;*/
     }
     .tablero{
         width: 100%;
