@@ -40,7 +40,7 @@ deslizador.oninput = () => {
   ctx.drawImage(img, 0,0);
 
   //-- Obtener la imagen del canvas en pixeles
-  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height); //seleccionamos la imagen entera 
 
   //-- Obtener el array con todos los píxeles
   let data = imgData.data
@@ -50,7 +50,7 @@ deslizador.oninput = () => {
 
   //-- Filtrar la imagen según el nuevo umbral
   for (let i = 0; i < data.length; i+=4) {
-    if (data[i] > umbral)
+    if (data[i] > umbral) //< capa de color rojo
       data[i] = umbral;
   }
 
