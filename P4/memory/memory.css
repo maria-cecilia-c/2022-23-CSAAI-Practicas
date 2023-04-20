@@ -19,7 +19,11 @@ body{
 .game {
     background-color:#fca8f18f;
     position: absolute;
+    width: 50%;
+    height: 100%;
+    place-content: center;
     top: 50%;
+    bottom: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -70,12 +74,15 @@ button:hover {
 }
 
 .tablero {
-    width: 900px;
     background-color: #cfbbff94;
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-gap: 20px;
+
+    width: 90%;
+    height: 100%;
+    align-items: center;
 }
 
 .grid-container.flipped .tablero {
@@ -173,17 +180,13 @@ input[type="range"]::-moz-range-progress {
     border-radius: 20px;
   }
 
-  @media screen and (max-width: 1382px) {
+  @media screen and (max-width: 600px) {
     .game{
-        width: 50%;
+        width: 100%;
         height: 100%;
-        place-content: center;
-        top: 50%;
-        bottom: 60%;
     }
     .tablero{
-        width: 90%;
+        width: 100%;
         height: 100%;
-        align-items: center;
     }
   }
