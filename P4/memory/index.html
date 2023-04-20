@@ -10,40 +10,43 @@
         <script src="memory-game.js" defer></script>
     </head>
     <body>
-        <div >
-            <img src="kerotarta.png">
-        </div>
-        <div class="game">
-            
-            <div class="controles">
-                <button class = "bt2">Comenzar</button>
-                <button class="bt1">Reiniciar</button>
-
-
-                <div class="display">
-                    <div class="movimientos">0 movimientos</div>
-                    <div class="timer">tiempo: 0 sec</div>
-                </div>
+        <div class="game2">
+            <div >
+                <img src="kerotarta.png">
             </div>
-            <div class="grid-container">
-                <p>Una vez que has selecionado la dimension no podras cambiarlo, pero en caso de querer hacerlo debereas reinicar el juego.</p>
-                <h4>Dimension del tablero: <span id="range_dimen">0</span></h4>
-                <p><input type="range" id="range2" class="range2"  min="0" step="2" max="6"  value="0"> <span id="dimen"></span>  
+            <div class="game">
                 
-                </p>
-
-                <div class="tablero" grid-dimension="4">
-                    <div class="card">
-                        <div class="card-front"></div>
-                        <div class="card-back"></div>
+                <div class="controles">
+                    <button class = "bt2">Comenzar</button>
+                    <button class="bt1">Reiniciar</button>
+    
+    
+                    <div class="display">
+                        <div class="movimientos">0 movimientos</div>
+                        <div class="timer">tiempo: 0 sec</div>
                     </div>
                 </div>
-
-                <div class="win">¡Has Ganado!</div>
+                <div class="grid-container">
+                    <p>Una vez que has selecionado la dimension no podras cambiarlo, pero en caso de querer hacerlo debereas reinicar el juego.</p>
+                    <h4>Dimension del tablero: <span id="range_dimen">0</span></h4>
+                    <p><input type="range" id="range2" class="range2"  min="0" step="2" max="6"  value="0"> <span id="dimen"></span>  
+                    
+                    </p>
+    
+                    <div class="tablero" grid-dimension="4">
+                        <div class="card">
+                            <div class="card-front"></div>
+                            <div class="card-back"></div>
+                        </div>
+                    </div>
+    
+                    <div class="win">¡Has Ganado!</div>
+                </div>
+    
             </div>
-
+    
         </div>
-
+        
     </body>
 </html>
 
