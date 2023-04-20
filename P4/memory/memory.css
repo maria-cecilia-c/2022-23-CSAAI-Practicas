@@ -169,10 +169,8 @@ button:hover {
 input[type="range"]::-moz-range-progress {
     background-color: #a8a3f5; 
     font-size: 40pt;
-    
     border-radius: 20px;
   }
-
 
   @media screen and (max-width: 1382px) {
     .game{
