@@ -74,12 +74,11 @@ button:hover {
 }
 
 .tablero {
-    background-color: #cfbbff94;
+    background-color: #cfbbff;
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-gap: 20px;
-
     width: 90%;
     height: 100%;
     align-items: center;
