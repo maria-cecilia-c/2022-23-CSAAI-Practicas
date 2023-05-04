@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="java.js" defer></script>
+    <title>Simulando la Red</title>
+</head>
+<body>
+    
+    <div class="todo">
+        <div class="texto">
+            <h1>Simulando la red</h1>
+        </div>
+        <br>
+        <div class="box2">
+            <p>Imagen en Origen</p>
+            <div class="origen">
+                <div class="box">
+                    <img src="origen.jpeg" id="imagesrc" >
+                    <img src="origen2.jpeg" id="imagesrchide">    
+                    <img src="error.png" id="cloud" >
+                </div>
+              
+            </div>
+    
+            <div class="rangos">
+                <p>Retardo</p>
+                <input type="range" id="netdelay" min="1" max="5" value="1"/>
+                <p id="netdelay_value">0</p>
+                
+                <p id="letraNodo">Nodos</p>
+                <input type="range" id="numNodos" min="3" max="8" value="1"/>
+                <p id="numNodos_value">0</p>
+            </div>
+            
+            <button id="bsend">Enviar</button>
+            <p>Imagen en Destino</p>
+            <div class="destino">
+                <div class="box">
+                    <canvas id="canvas"></canvas>
+                </div>
+            
+            </div>
+        </div>
+        
+        
+        
+    </div>
+
+    
+</body>
+</html>
