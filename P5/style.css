@@ -53,8 +53,8 @@ body {
     height: 10px;
   }
     #netdelay::-moz-range-thumb {
-      width: 35px;
-      height: 35px;
+      width: 45px;
+      height: 45px;
       border: 0;
       background: url('cara2.png');
       background-size: contain;
