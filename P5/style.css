@@ -1,7 +1,7 @@
 body {
     background-image: url(fondo.jpg);
     background-repeat: no-repeat;
-    background-size: 120%;
+    background-size: 108%;
   }
   
   .todo{
@@ -17,8 +17,9 @@ body {
   p { 
     font-weight: bold; 
     font-style: italic;
-    -webkit-text-stroke: 0.5px #ffffff;
+    -webkit-text-stroke: 0.75px #000000;
     color: #ffffff; 
+    
   }
   .origen{
     display: flex;
@@ -52,13 +53,22 @@ body {
     height: 10px;
   }
     #netdelay::-moz-range-thumb {
-      width: 30px;
+      width: 35px;
       height: 35px;
       border: 0;
       background: url('cara2.png');
       background-size: contain;
       background-repeat: no-repeat;
     }
+    #numNodos::-moz-range-thumb {
+      width: 35px;
+      height: 35px;
+      border: 0;
+      background: url('pngwing.com.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
 
   
   #letraNodo{
