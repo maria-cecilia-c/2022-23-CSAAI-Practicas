@@ -37,6 +37,7 @@ gui.netdelayvalue.innerHTML = state.netDelay;
 gui.numNodosvalue.innerHTML = state.numNodos;
 
 
+
 //-- Cuando está disponible cargo la imagen con la nube para represntar el destino
 imgCloud.onload = function () {
 
